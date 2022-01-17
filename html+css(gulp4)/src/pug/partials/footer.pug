@@ -1,0 +1,33 @@
+footer.footer
+	.footer__center.center
+		.footer__row
+			.footer__col
+				a.footer__logo(href="index.html")
+					img.some-icon(src="img/logo-dark.png" alt="Crypter NFT")
+					img.some-icon-dark(src="img/logo-light.png" alt="Crypter NFT")
+				.footer__info The New Creative Economy.
+				.footer__theme
+					.footer__details Dark theme
+					+theme("theme_big")
+			.footer__col
+				.footer__group
+					.footer__head Crypter.
+						+i('arrow-bottom')
+					.footer__body
+						.footer__menu
+							a.footer__link(href="search01.html") Discover
+							a.footer__link(href="connect-wallet.html") Connect wallet
+				.footer__group
+					.footer__head Info
+						+i('arrow-bottom')
+					.footer__body
+						.footer__menu
+							a.footer__link(href="faq.html") FAQ
+							a.footer__link(href="upload-variants.html") Create item
+			.footer__col
+				.footer__category Join Newsletter
+				.footer__text Subscribe our newsletter to get more free design course and resource
+				+subscription("email", "email", "Enter your email")
+		.footer__foot
+			.footer__copyright Copyright © 2021 UI8 LLC. All rights reserved
+			.footer__note We use cookies for better service. <a href="/#">Accept</a>

@@ -1,0 +1,54 @@
+.text
+	&-right
+		text-align: right
+	&-center
+		text-align: center
+	&-uppercase
+		text-transform: uppercase
+
+.m-auto
+	margin: auto
+.ml-auto
+	margin-left: auto
+.mr-auto
+	margin-right: auto
+
+.align
+	&-baseline
+		align-items: baseline
+
+.desktop
+	&-hide
+		+d
+			display: none !important
+	&-show
+		display: none !important
+		+d
+			display: block !important
+	&-text-right
+		+d
+			text-align: right !important
+
+.tablet
+	&-hide
+		+t
+			display: none !important
+	&-show
+		display: none !important
+		+t
+			display: block !important
+	&-text-right
+		+t
+			text-align: right !important
+			
+.mobile
+	&-hide
+		+m
+			display: none !important
+	&-show
+		display: none !important
+		+m
+			display: block !important
+	&-text-right
+		+m
+			text-align: right !important

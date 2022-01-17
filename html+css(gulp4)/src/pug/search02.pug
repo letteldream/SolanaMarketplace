@@ -1,0 +1,40 @@
+---
+title: Crypter-NFT
+---
+extends layouts/layout
+block content
+	.section.result
+		.result__center.center
+			.result__preview
+				img.some-icon(srcSet="img/content/figures@2x.png 2x" src="img/content/figures.png" alt="Figures")
+				img.some-icon-dark(srcSet="img/content/figures-dark@2x.png 2x" src="img/content/figures-dark.png" alt="Figures")
+			.result__wrap
+				h2.result__title.h2 Sorry, we couldn’t find any results for this search.
+				.result__info Maybe give one of these a try?
+				+subscription("text", "search", "Enter your search...")
+			.result__subtitle Explore more
+			.result__list
+				a.result__item(href="#")
+					.result__picture
+						img(src="img/content/activity-pic-1.jpg" alt="Category")
+					.result__details
+						.result__category Artwork
+						.result__text 138 items
+				a.result__item(href="#")
+					.result__picture
+						img(src="img/content/activity-pic-5.jpg" alt="Category")
+					.result__details
+						.result__category Photography
+						.result__text 138 items
+				a.result__item(href="#")
+					.result__picture
+						img(src="img/content/activity-pic-4.jpg" alt="Category")
+					.result__details
+						.result__category Game
+						.result__text 138 items
+				a.result__item(href="#")
+					.result__picture
+						img(src="img/content/activity-pic-2.jpg" alt="Category")
+					.result__details
+						.result__category Music
+						.result__text 138 items

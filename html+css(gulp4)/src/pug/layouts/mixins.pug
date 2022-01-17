@@ -1,0 +1,147 @@
+mixin i(name)
+	svg.icon(class='icon-' + name)
+		use(xlink:href='#icon-' + name)
+
+mixin theme(classTheme)
+	label.theme.js-theme(class=classTheme)
+		input.theme__input(type="checkbox")
+		span.theme__inner
+			span.theme__box
+
+mixin switch(checked)
+	label.switch
+		if checked
+			input.switch__input(type="checkbox" checked)
+		else
+			input.switch__input(type="checkbox")
+		span.switch__inner
+			span.switch__box
+
+mixin checkbox(text, checked)
+	label.checkbox
+		if checked
+			input.checkbox__input(type="checkbox" checked)
+		else
+			input.checkbox__input(type="checkbox")
+		span.checkbox__inner
+			span.checkbox__tick
+			span.checkbox__text=text
+
+
+mixin card(srcSet, src, title)
+	.card
+		.card__preview
+			img(srcSet=`${srcSet} 2x`
+				src=src
+				alt="Card preview")
+			.card__control
+				.status-green.card__category purchasing !
+				button.card__favorite
+					+i('heart')
+				a.button-small.card__button.js-popup-open(href="#popup-bid" data-effect="mfp-zoom-in")
+					span Place a bid
+					+i('scatter-up')
+		a.card__link(href="item.html")
+			.card__body
+				.card__line 
+					.card__title=title  
+					.card__price 2.45 ETH
+				.card__line
+					.card__users
+						.card__avatar
+							img(src="img/content/avatar-1.jpg" alt="Avatar")
+						.card__avatar
+							img(src="img/content/avatar-3.jpg" alt="Avatar")
+						.card__avatar
+							img(src="img/content/avatar-4.jpg" alt="Avatar")
+					.card__counter 3 in stock
+			.card__foot
+				.card__status
+					+i('candlesticks-up')
+					| Highest bid <span>0.001 ETH</span>
+				.card__bid New bid <span role="img" aria-label="fire">🔥</span>
+
+mixin subscription(typeInput, name, placeholder)
+	form.subscription
+		input.subscription__input(type=typeInput name=name placeholder=placeholder required)
+		button.subscription__btn
+			+i('arrow-next')
+
+mixin loader(classLoader)
+	.loader(class=classLoader)
+
+mixin loaderCircle
+	.loader-circle
+
+mixin popupWallet
+	.popup.popup_wallet.mfp-hide#popup-wallet
+		.popup__title.h4 Folow steps
+		.steps
+			.steps__item
+				.steps__head
+					.steps__icon
+						+i('upload-file')
+					.steps__details
+						.steps__info Deposit ETH
+						.steps__text Send transaction with your wallet
+				button.button.steps__button Start now
+			.steps__item
+				.steps__head
+					.steps__icon
+						+i('check')
+					.steps__details
+						.steps__info Approve
+						.steps__text Checking balance and approving
+				button.button.steps__button.disabled Start now
+			//- .steps__item
+			//- 	.steps__head
+			//- 		.steps__icon
+			//- 			+loaderCircle
+			//- 		.steps__details
+			//- 			.steps__info Approve
+			//- 			.steps__text Checking balance and approving
+			//- 	button.button.steps__button.loading
+			//- 		+loader('loader_white')
+			//- .steps__item.error
+			//- 	.steps__head
+			//- 		.steps__icon
+			//- 			+i('pencil')
+			//- 		.steps__details
+			//- 			.steps__info Approve
+			//- 			.steps__text Checking balance and approving
+			//- 	button.button.steps__button.error Failed
+			.steps__item
+				.steps__head
+					.steps__icon
+						+i('pencil')
+					.steps__details
+						.steps__info Signature
+						.steps__text Create a signature to place a bit
+				button.button.steps__button.disabled.js-popup-close Start now
+
+mixin popupBid
+	.popup.popup_bid.mfp-hide#popup-bid
+		.popup__title.h4 Place a bid
+		.popup__info You are about to purchase <strong>C O I N Z</strong> from <strong>UI8</strong>
+		.popup__subtitle Your bid
+		.popup__table
+			.popup__row
+				.popup__col Enter bid
+				.popup__col
+					.popup__bid
+						input.popup__rate(type="tel" name="bid")
+						.popup__currency ETH
+			.popup__row
+				.popup__col Your balance
+				.popup__col 8.498 ETH
+			.popup__row
+				.popup__col Service fee
+				.popup__col 0 ETH
+			.popup__row
+				.popup__col Total bid amount
+				.popup__col 0 ETH
+		.popup__btns
+			a.button.popup__button.js-popup-open(href="#popup-wallet" data-effect="mfp-zoom-in") Place a bid
+			button.button-stroke.popup__button.js-popup-close Cancel
+
+	

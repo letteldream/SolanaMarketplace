@@ -1,0 +1,72 @@
+.range
+    &__label
+        margin-bottom: 20px
+        +hairline-2
+        color: $neutrals5
+    &__indicators
+        display: flex
+        justify-content: space-between
+        margin-top: 8px
+    &__text
+        font-weight: 500 
+
+.noUi
+    &-horizontal
+        height: 8px 
+    &-target
+        border: none
+        background: $neutrals6
+        box-shadow: none 
+        +dark
+            background: $neutrals3 
+    &-connect
+        background: $blue
+    &-handle
+        border: none
+        box-shadow: none
+        background: $blue
+        border-radius: 50%
+        cursor: pointer 
+        &:before,
+        &:after
+            display: none
+    &-horizontal &-handle
+        right: -12px
+        top: -8px
+        width: 24px
+        height: 24px
+        border: 4px solid $neutrals8
+    &-tooltip
+        display: flex
+        justify-content: center
+        align-items: center
+        min-width: 40px
+        padding: 4px 8px 
+        background: $neutrals1
+        border-radius: 8px 
+        border: none
+        font-size: 14px
+        font-weight: 600 
+        color: $neutrals8
+        visibility: hidden
+        opacity: 0
+        transition: all .2s 
+        &:before
+            content: ""
+            position: absolute
+            top: 100%
+            left: 50%
+            transform: translateX(-50%)  
+            +arr(8,4,$neutrals1,b)
+        +dark
+            background: $neutrals3 
+            &:before
+                +arr(8,4,$neutrals3,b)
+    &-handle:hover &-tooltip
+        visibility: visible
+        opacity: 1
+    &-horizontal &-tooltip
+        bottom: 24px
+
+html:not([dir=rtl]) .noUi-horizontal .noUi-handle
+    right: -12px

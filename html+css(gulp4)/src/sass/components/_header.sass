@@ -1,0 +1,453 @@
+.header
+    position: relative
+    z-index: 20
+    padding: 20px 0
+    border-bottom: 1px solid $neutrals6
+    +m
+        padding: 48px 0 24px
+        border: none
+    +dark
+        border-color: $neutrals3
+    &__center
+        display: flex
+        align-items: center
+    &__upload
+        margin-right: 12px
+        +m
+            display: none
+    &__logo
+        position: relative
+        z-index: 12
+        display: inline-block
+        flex-shrink: 0
+        width: 128px
+        margin-right: 32px
+        +d
+            margin-right: auto
+        img
+            width: 100%
+    &__wrapper
+        display: flex
+        align-items: center
+        flex-grow: 1
+        +d
+            flex-grow: 0
+        +m
+            position: absolute
+            top: 0
+            left: 0
+            right: 0
+            flex-direction: column
+            align-items: stretch
+            min-height: calc(var(--vh, 1vh) * 100)
+            margin: 0
+            padding: 140px 32px 40px
+            box-shadow: 0px 64px 64px rgba(31, 47, 70, 0.2)
+            background: $neutrals8
+            visibility: hidden
+            opacity: 0
+            transition: all .2s
+            +dark
+                background: $neutrals1
+            &.visible
+                visibility: visible
+                opacity: 1
+        .header__button
+            display: none
+            +m
+                display: inline-flex
+                margin-top: 16px
+        .header__connect
+            +rmin(768)
+                display: none !important
+    &__nav
+        display: flex
+        margin-right: auto
+        border-left: 1px solid $neutrals6
+        +d
+            display: none
+        +m
+            display: flex
+            flex-direction: column
+            margin: 0 0 40px
+            border: none
+        +dark
+            border-color: $neutrals3
+    &__nav &__link
+        margin-left: 32px
+        +dm-sans
+        line-height: 40px
+        color: $neutrals4
+        transition: color .2s
+        +m
+            margin-left: 0
+            font-size: 24px
+            line-height: 64px
+        &:hover,
+        &.active
+            color: $blue
+        &:nth-child(n+3)
+            display: none
+            +m
+                display: block
+    &__search
+        position: relative
+        flex-shrink: 0
+        width: 256px
+        margin-right: 24px
+        +t
+            display: none
+        +m
+            display: block
+            width: 100%
+            margin: auto 0 0
+    &__input
+        width: 100%
+        height: 40px
+        padding: 0 42px 0 16px
+        background: none
+        border: 2px solid $neutrals6
+        border-radius: 8px
+        +poppins
+        +caption-2
+        transition: border-color .2s
+        +placeholder
+            color: $neutrals4
+        +dark
+            border-color: $neutrals3
+            color: $neutrals8
+        &:focus
+            border-color: $neutrals4
+            +dark
+                border-color: $neutrals4
+    &__result
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        width: 42px
+        .icon
+            width: 20px
+            height: 20px
+            fill: $neutrals4
+            transition: fill .2s
+        &:hover
+            .icon
+                fill: $blue
+    &__item
+        position: relative
+        +m
+            position: static
+        &_notification
+            display: none
+            margin-right: 24px
+            +m
+                margin-right: 20px
+        &_user
+            display: none
+            +m
+                margin-right: 20px
+    &__item_notification &__head
+        position: relative
+        width: 40px
+        height: 40px
+        .icon
+            width: 24px
+            height: 24px  
+            fill: $neutrals4
+            transition: fill .2s
+        &:hover
+            .icon
+                fill: $blue
+        &.active
+            &:before
+                content: ""
+                position: absolute
+                top: 0
+                right: 0
+                width: 12px
+                height: 12px
+                border-radius: 50%
+                background: $green
+    &__item_user &__head
+        position: relative
+        display: flex
+        align-items: center
+        padding: 4px 16px 4px 4px
+        border-radius: 20px
+        box-shadow: inset 0 0 0 2px $neutrals6
+        +button-2
+        cursor: pointer
+        transition: box-shadow .2s
+        +m
+            padding: 0
+            border-radius: 0
+            box-shadow: none
+        +dark
+            box-shadow: inset 0 0 0 2px $neutrals3
+            +m
+                box-shadow: none 
+        &:hover
+            box-shadow: inset 0 0 0 2px $blue
+            +m
+                box-shadow: none
+            +dark
+                box-shadow: inset 0 0 0 2px $blue
+                +m
+                    box-shadow: none
+    &__avatar
+        flex-shrink: 0
+        width: 32px
+        height: 32px
+        img
+            width: 100%
+            height: 100%
+            border-radius: 50%
+    &__wallet
+        margin-left: 12px
+        +m
+            display: none
+        +dark
+            color: $neutrals8 
+    &__currency
+        color: $green
+    &__body
+        position: absolute
+        left: 50%
+        box-shadow: 0px 16px 64px 0 rgba(31, 47, 70, 0.4)
+        background: $neutrals8
+        opacity: 0
+        visibility: hidden
+        transform: scale(.9)
+        transform-origin: 50% 50px
+        will-change: transform
+        transition: all .4s 
+        +m
+            left: 16px 
+            right: 16px
+            box-shadow: 0px 16px 32px 0 rgba(31, 47, 70, 0.4)
+        &:before
+            content: ""
+            position: absolute
+            left: 50%
+            bottom: 100%
+            width: 32px
+            height: 13px
+            transform: translateX(-50%)
+            background: url("data:image/svg+xml,%3Csvg width='32' height='13' viewBox='0 0 32 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.3432 2.65685L0 13H32L21.6569 2.65686C18.5327 -0.467339 13.4673 -0.467344 10.3432 2.65685Z' fill='%23FCFCFD'/%3E%3C/svg%3E%0A") no-repeat 100% 50% / 100% auto
+            +m
+                display: none
+        +dark
+            box-shadow: 0px 16px 32px 0 rgba($neutrals2, .3)
+    &__item_notification &__body
+        top: calc(100% + 44px)
+        width: 396px
+        margin-left: -198px
+        padding: 40px 32px 32px
+        border-radius: 24px
+        +m
+            top: calc(100% + 16px)
+            width: auto
+            margin: 0
+            padding: 32px 16px
+        +dark
+            background: $neutrals1
+            &:before
+                background-image: url("data:image/svg+xml,%3Csvg width='32' height='13' viewBox='0 0 32 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.3432 2.65685L0 13H32L21.6569 2.65686C18.5327 -0.467339 13.4673 -0.467344 10.3432 2.65685Z' fill='%23141416'/%3E%3C/svg%3E%0A")
+    &__item_user &__body
+        top: calc(100% + 20px)
+        width: 256px
+        margin-left: -128px
+        padding: 32px 16px 20px
+        border-radius: 12px
+        +t
+            left: auto
+            right: 0
+        +m
+            left: 16px 
+            right: 16px
+            top: calc(100% + 16px)
+            width: auto
+            margin: 0
+        +dark
+            background: $neutrals2
+            &:before
+                background-image: url("data:image/svg+xml,%3Csvg width='32' height='13' viewBox='0 0 32 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.3432 2.65685L0 13H32L21.6569 2.65686C18.5327 -0.467339 13.4673 -0.467344 10.3432 2.65685Z' fill='%2323262F'/%3E%3C/svg%3E%0A")
+    &__item.active &__body
+        opacity: 1
+        visibility: visible
+        transform: scale(1)
+    &__title
+        margin-bottom: 16px
+        +m
+            margin: 0 16px
+    &__list
+        margin: 0 -16px
+        +m
+            margin: 0
+    &__notification
+        position: relative
+        display: flex
+        align-items: center
+        padding: 16px 40px 16px 16px
+        border-radius: 16px
+        transition: background .2s
+        &:hover
+            background: $neutrals7
+            +dark
+                background: $neutrals2
+    &__preview
+        flex-shrink: 0
+        width: 64px
+        height: 64px
+        margin-right: 24px
+        +m
+            margin-right: 16px
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+            border-radius: 16px
+    &__details
+        flex-grow: 1
+    &__subtitle
+        +body-bold-2
+        color: $neutrals1
+        +dark
+            color: $neutrals8
+    &__price
+        font-weight: 500
+        color: $neutrals3
+        +dark
+            color: $neutrals6
+    &__date
+        +caption-2
+        color: $neutrals4
+    &__status
+        position: absolute
+        top: 50%
+        right: 16px
+        transform: translateY(-50%)
+        width: 12px
+        height: 12px
+        border-radius: 50%
+        background: $blue 
+    &__item_notification &__button
+        position: absolute
+        top: 40px
+        right: 32px
+        +m
+            position: static
+            width: 100%
+            margin-top: 20px
+    &__name
+        +body-bold-1
+    &__code
+        display: flex
+        align-items: center
+        margin-bottom: 8px
+    &__number
+        font-weight: 500
+        color: $neutrals4
+    &__copy
+        margin-left: 8px
+        .icon
+            width: 16px
+            height: 16px  
+            fill: $blue
+            transition: fill .2s
+        &:hover
+            .icon
+                fill: darken($blue, 10)
+    &__wrap
+        margin-bottom: 7px
+        padding: 8px
+        border-radius: 16px
+        box-shadow: 0px 24px 24px -8px rgba(15, 15, 15, 0.2)
+    &__line
+        display: flex
+        align-items: center
+        margin-bottom: 10px
+    &__img
+        flex-shrink: 0
+        width: 40px
+        height: 40px
+        margin-right: 16px
+        img
+            width: 100%
+            height: 100%
+            border-radius: 50%
+    &__info
+        +caption-2
+        color: $neutrals4
+    &__money
+        +body-bold-1
+    &__item_user &__button
+        width: 100%
+        height: 32px
+        padding: 0 10px
+        font-size: 14px
+    &__menu &__link
+        display: flex
+        align-items: center
+        padding: 17px 0 12px
+        +button-2
+        color: $neutrals4
+        &:not(:last-child)
+            border-bottom: 1px solid $neutrals6
+            +dark
+                border-color: $neutrals3
+        &[href]
+            &:hover
+                color: $blue
+                .icon
+                    fill: $blue
+    &__icon
+        flex-shrink: 0
+        width: 20px
+        margin-right: 8px
+        .icon
+            width: 20px
+            height: 20px
+            fill: $neutrals4
+            transition: fill .2s
+    .theme
+        margin-left: auto
+    &__burger
+        display: none
+        +m
+            display: block
+            position: relative
+            width: 32px
+            height: 32px
+            background: none
+            -webkit-tap-highlight-color: rgba(0,0,0,0)
+            &.active
+                &:before
+                    transform: translateY(0) rotate(-45deg)
+                &:after
+                    transform: translateY(0) rotate(45deg)
+            &:before,
+            &:after
+                content: ''
+                position: absolute
+                top: 16px
+                left: 6px
+                width: 20px
+                height: 2px
+                background: $neutrals4
+                border-radius: 2px
+                transition: transform .2s
+            &:before
+                transform: translateY(-4px)
+            &:after
+                transform: translateY(3px)
+    &__center > &__connect
+        +m
+            display: none !important
+    &.registered
+        .header__connect
+            display: none
+        .header__item_notification,
+        .header__item_user
+            display: block

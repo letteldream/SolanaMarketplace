@@ -1,0 +1,71 @@
+---
+title: Crypter-NFT
+classHeader: registered
+---
+extends layouts/layout
+block content
+	.control
+		.control__center.center
+			a.button-stroke.button-small.control__button(href="index.html")
+				+i('arrow-prev')
+				span Back to home
+			.breadcrumbs
+				ul.breadcrumbs
+					li.breadcrumbs__item
+						a.breadcrumbs__link(href="profile.html") Profile
+					li.breadcrumbs__item Activity
+	.section-pt80.activity
+		.activity__center.center
+			.activity__top
+				h1.activity__title.h2 Activity
+				button.button-stroke.button-small.mobile-hide.activity__button Mark all as read
+				button.button-circle-stroke.button-small.tablet-show.activity__toggle.js-activity-toggle
+					+i('filter')
+					+i('close')
+			.activity__row
+				.activity__wrapper
+					.activity__nav
+						a.activity__link.active(href="#") My activity
+						a.activity__link(href="#") Following
+						a.activity__link(href="#") All activity
+					.activity__list
+						mixin item(image, color, icon, title, description)
+							a.activity__item(href="#")
+								.activity__preview
+									img(src=image alt="Notification")
+									.activity__icon(style="background-color:" + color + ";")
+										img(src=icon alt="Icon notification")
+								.activity__details
+									.activity__subtitle=title 
+									.activity__description=description
+									.activity__date 2 days ago
+						+item("img/content/activity-pic-1.jpg", "#EF466F", "img/content/flag.svg", "Something went wrong", "Can't display activity card. Try again later")
+						+item("img/content/activity-pic-2.jpg", "#141416", "img/content/play.svg", "UI8", "started following you")
+						+item("img/content/activity-pic-3.jpg", "#141416", "img/content/download.svg", "ETH received", "0.08 ETH recived")
+						+item("img/content/activity-pic-4.jpg", "#141416", "img/content/megaphone.svg", "C O I N Z", "purchased by You for 0.001 ETH from UI8")
+						+item("img/content/activity-pic-5.jpg", "#141416", "img/content/wallet.svg", "ETH received", "0.08 ETH recived")
+						+item("img/content/activity-pic-6.jpg", "#141416", "img/content/wallet.svg", "ETH received", "0.08 ETH recived")
+						+item("img/content/activity-pic-7.jpg", "#141416", "img/content/wallet.svg", "ETH received", "0.08 ETH recived")
+					+loader
+				button.button-stroke.button-small.mobile-show.activity__button Mark all as read
+				.activity__filters.js-activity-filters
+					.activity__info Filters
+					.activity__group
+						+checkbox("Sales", true)
+						+checkbox("Listings")
+						+checkbox("Bids")
+						+checkbox("Burns", true)
+						+checkbox("Followings")
+						+checkbox("Likes", true)
+						+checkbox("Purchase")
+						+checkbox("Transfers", true)
+					.activity__btns
+						button.button-stroke.button-small.activity__button.js-activity-select Select all
+						button.button-stroke.button-small.activity__button.js-activity-unselect Unselect all
+
+
+
+
+
+
+			

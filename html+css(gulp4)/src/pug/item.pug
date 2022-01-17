@@ -1,0 +1,310 @@
+---
+title: Crypter-NFT
+classHeader: registered
+---
+extends layouts/layout
+block content
+	.section.item
+		.item__center.center
+			.item__bg
+				.item__preview
+					.item__categories
+						.status-black.item__category art
+						.status-purple.item__category unlockable
+					img(srcSet="img/content/item-pic@2x.jpg 2x" src="img/content/item-pic.jpg" alt="Item")
+				.options
+					.options__list
+						button.button-circle-stroke.options__button.options__button_share.js-options-share
+							+i('share')
+						button.button-circle-stroke.options__button.options__button_favorite.active
+							+i('heart')
+						.actions.js-actions
+							button.button-circle-stroke.actions__button.js-actions-button
+								+i('more')
+							.actions__body.js-actions-body
+								a.actions__item.js-popup-open(href="#popup-price" data-effect="mfp-zoom-in")
+									+i('coin')
+									| Change price
+								a.actions__item.js-popup-open(href="#popup-transfer" data-effect="mfp-zoom-in")
+									+i('arrow-right-square')
+									| Transfer token
+								a.actions__item.js-popup-open(href="#popup-remove" data-effect="mfp-zoom-in")
+									+i('close-circle')
+									| Remove from sale
+								a.actions__item.js-popup-open(href="#popup-burn" data-effect="mfp-zoom-in")
+									+i('close-circle')
+									| Burn token
+								a.actions__item.js-popup-open(href="#popup-report" data-effect="mfp-zoom-in")
+									+i('info-circle')
+									| Report
+					.options__box.js-options-box
+						.options__stage Share link to this page
+						.options__share.share-btn(data-url="https://ui8.net")
+							a.options__direction.btn-twitter(data-id="tw")
+								span
+									+i('twitter')
+							a.options__direction.btn-facebook(data-id="fb")
+								span
+									+i('facebook')
+			.item__details
+				h1.item__title.h3 The amazing art
+				.item__cost
+					.status-stroke-green.item__price 2.5 ETH
+					.status-stroke-black.item__price $4,429.87
+					.item__counter 10 in stock
+				.item__text This NFT Card will give you Access to Special Airdrops. To learn more about UI8 please visit <a href="https://ui8.net" target="_blank">https://ui8.net</a>
+				.item__tabs.js-tabs
+					.item__nav
+						a.item__link.js-tabs-link.active(href="#") Info
+						a.item__link.js-tabs-link(href="#") Owners
+						a.item__link.js-tabs-link(href="#") History
+						a.item__link.js-tabs-link(href="#") Bids
+					.item__container
+						.item__box.js-tabs-item(style="display: block;")
+							.item__users
+								.item__user
+									.item__avatar
+										img(src="img/content/avatar-2.jpg" alt="Avatar")
+										.item__reward
+											img(src="img/content/reward-1.svg" alt="Reward")
+									.item__description
+										.item__position Owner
+										.item__name Raquel Will
+								.item__user
+									.item__avatar
+										img(src="img/content/avatar-1.jpg" alt="Avatar")
+									.item__description
+										.item__position Creator
+										.item__name Selina Mayert
+						.item__box.js-tabs-item
+							.item__users
+								.item__user
+									.item__avatar
+										img(src="img/content/avatar-1.jpg" alt="Avatar")
+									.item__description
+										.item__position Owner
+										.item__name Cole Mayert
+						.item__box.js-tabs-item
+							.item__users
+								.item__user
+									.item__avatar
+										img(src="img/content/avatar-2.jpg" alt="Avatar")
+										.item__reward
+											img(src="img/content/reward-1.svg" alt="Reward")
+									.item__description
+										.item__name Raquel Will
+										.item__action Place a bid: <span class="item__money">1.46 ETH</span>
+									.item__time Jun 14 - 4:12 PM
+								.item__user
+									.item__avatar
+										img(src="img/content/avatar-6.jpg" alt="Avatar")
+										.item__reward
+											img(src="img/content/reward-1.svg" alt="Reward")
+									.item__description
+										.item__name Cole Fahey
+										.item__action Put <span>Awesome work</span> on sale
+									.item__time Jun 14 - 4:12 PM
+								.item__user
+									.item__avatar
+										img(src="img/content/avatar-7.jpg" alt="Avatar")
+										.item__reward
+											img(src="img/content/reward-1.svg" alt="Reward")
+									.item__description
+										.item__name Adah Mitchell
+										.item__action Accepted <span>Raquel Will</span> ‘s bid
+									.item__time Jun 14 - 4:12 PM
+						.item__box.js-tabs-item
+							.item__users
+								.item__user
+									.item__avatar
+										img(src="img/content/avatar-2.jpg" alt="Avatar")
+										.item__reward
+											img(src="img/content/reward-1.svg" alt="Reward")
+									.item__description
+										.item__action Highest bid: <span>1.46 ETH</span>
+										.item__name Raquel Will
+								.item__user
+									.item__avatar
+										img(src="img/content/avatar-1.jpg" alt="Avatar")
+									.item__description
+										.item__action #2
+										.item__name Cole Fahey
+								.item__user
+									.item__avatar
+										img(src="img/content/avatar-8.jpg" alt="Avatar")
+									.item__description
+										.item__action #3
+										.item__name Selina Mayert
+				.item__control
+					.item__head
+						.item__avatar
+							img(src="img/content/avatar-4.jpg" alt="Avatar")
+						.item__description
+							.item__info Highest bid by <span>Kohaku Tora</span>
+							.item__currency
+								.item__price <span>1.46</span> ETH
+								.item__price $2,764.89
+					.item__btns
+						a.button.item__button.js-popup-open(href="#popup-purchase" data-effect="mfp-zoom-in") Purchase now
+						a.button-stroke.item__button.js-popup-open(href="#popup-bid" data-effect="mfp-zoom-in") Place a bid
+					//- .item__btns
+					//- 	button.button-stroke.item__button View all
+					//- 	a.button.item__button.js-popup-open(href="#popup-accept" data-effect="mfp-zoom-in") Accept
+					.item__variants Service fee <span class="item__percent">1.5%</span> <span>2.563 ETH</span> <span>$4,540.62</span>
+					//- .item__foot
+					//- 	a.button.item__button.js-popup-open(href="#popup-sale" data-effect="mfp-zoom-in") Put on sale
+					//- .item__note You can sell this token on Crypter Marketplace
+	.popup.popup_purchase.mfp-hide#popup-purchase
+		.popup__item(style="display: block;")
+			.popup__title.h4 Checkout
+			.popup__info You are about to purchase <strong>C O I N Z</strong> from <strong>UI8</strong>
+			.popup__table
+				.popup__row
+					.popup__col 0.007
+					.popup__col ETH
+				.popup__row
+					.popup__col Your balance
+					.popup__col 8.498 ETH
+				.popup__row
+					.popup__col Service fee
+					.popup__col 0 ETH
+				.popup__row
+					.popup__col You will pay
+					.popup__col 0.007 ETH
+			.popup__attention
+				.popup__preview
+					+i('info-circle')
+				.popup__details
+					.popup__category This creator is not verified
+					.popup__text Purchase this item at your own risk
+			.popup__btns
+				button.button.popup__button I understand, continue
+				button.button-stroke.popup__button.js-popup-close Cancel
+		.popup__item
+			.popup__title.h4 Folow steps
+			.steps
+				.steps__item
+					.steps__head
+						.steps__icon
+							+loaderCircle
+						.steps__details
+							.steps__info Purchasing
+							.steps__text Sending transaction with your wallet
+			.popup__attention
+				.popup__preview
+					+i('info-circle')
+				.popup__details
+					.popup__category This creator is not verified
+					.popup__text Purchase this item at your own risk
+				.popup__avatar
+					img(src="img/content/avatar-3.jpg" alt="Avatar")
+			.popup__btns
+				button.button.popup__button I understand, continue
+				button.button-stroke.popup__button.js-popup-close Cancel
+		.popup__item
+			.success
+				.success__title.h2 Yay! <span role="img" aria-label="firework">🎉</span>
+				.success__info You successfully purchased <span>C O I N Z</span> from UI8
+				.success__table
+					.success__row
+						.success__col Status
+						.success__col Transaction ID
+					.success__row
+						.success__col Processing
+						.success__col 0msx836930...87r398
+				.success__stage Time to show-off
+				.success__socials
+					a.success__social(href="https://www.facebook.com/ui8.net/" target="_blank")
+						+i('facebook')
+					a.success__social(href="https://twitter.com/ui8" target="_blank")
+						+i('twitter')
+					a.success__social(href="https://www.instagram.com/ui8net/" target="_blank")
+						+i('instagram')
+					a.success__social(href="https://www.pinterest.com/ui8m/" target="_blank")
+						+i('pinterest')
+	.popup.popup_accept.mfp-hide#popup-accept
+		.accept
+			.accept__line
+				.accept__icon
+				.accept__text You are about to accept a bid for <strong>C O I N Z</strong> from <strong>UI8</strong>
+			.accept__subtitle 1.46 ETH for 1 edition
+			.accept__table
+				.accept__row
+					.accept__col Service fee
+					.accept__col 0 ETH
+				.accept__row
+					.accept__col Total bid amount
+					.accept__col 1.46 ETH
+		.popup__btns
+			button.button.popup__button Accept bid
+			button.button-stroke.popup__button.js-popup-close Cancel
+	.popup.popup_sale.mfp-hide#popup-sale
+		.popup__title.h4 Put on sale
+		.popup__line 
+			.popup__icon
+				+i('coin')
+			.popup__box
+				.popup__category Instant sale price
+				.popup__text Enter the price for which the item will be instanly sold
+			+switch(true)
+		.popup__table
+			.popup__row
+				.popup__col Enter your price
+				.popup__col ETH
+			.popup__row
+				.popup__col Service fee
+				.popup__col 1.5%
+			.popup__row
+				.popup__col Total bid amount
+				.popup__col 0 ETH
+		.popup__btns
+			button.button.popup__button Continue
+			button.button-stroke.popup__button.js-popup-close Cancel
+	.popup.popup_price.mfp-hide#popup-price
+		.popup__title.h4 Change price
+		.field
+			.field__label new price
+			.field__wrap
+				input.field__input(name="price" type="text" value="1.46" required)
+				.field__currency ETH
+		.popup__btns
+			button.button-purple.popup__button.js-popup-close Change price
+			button.button-stroke.popup__button.js-popup-close Cancel
+	.popup.popup_transfer.mfp-hide#popup-transfer
+		.popup__title.h4 Transfer token
+		.popup__note You can transfer tokens from your address to another
+		.popup__subtitle Receiver address
+		.popup__field
+			.popup__wrap
+				input.popup__input(type="text" name="address" placeholder="Paste address" required)
+		.popup__btns
+			button.button.popup__button.js-popup-close Continue
+			button.button-stroke.popup__button.js-popup-close Cancel
+	.popup.popup_remove.mfp-hide#popup-remove
+		.popup__title.h4 Remove from sale
+		.popup__note Do you really want to remove your item from sale? You can put it on sale anytime
+		.popup__btns
+			button.button.popup__button.js-popup-close Remove now
+			button.button-stroke.popup__button.js-popup-close Cancel
+	.popup.popup_burn.mfp-hide#popup-burn
+		.popup__title.h4 Burn token
+		.popup__note Are you sure to burn this token? This action cannot be undone. Token will be transfered to zero address
+		.popup__btns
+			button.button-purple.popup__button.js-popup-close Continue
+			button.button-stroke.popup__button.js-popup-close Cancel
+	.popup.popup_report.mfp-hide#popup-report
+		.popup__title.h4 Report
+		.popup__note Describe why you think this item should be removed from marketplace
+		.field
+			.field__label message
+			.field__wrap
+				textarea.field__textarea(name="message" placeholder="Tell us the details" required)
+		.popup__btns
+			button.button-purple.popup__button.js-popup-close Send now
+			button.button-stroke.popup__button.js-popup-close Cancel
+	+popupBid
+	+popupWallet
+
+
+
+

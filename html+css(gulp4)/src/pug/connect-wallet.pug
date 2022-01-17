@@ -1,0 +1,67 @@
+---
+title: Crypter-NFT
+---
+extends layouts/layout
+block content
+	.section-pt80.wallet
+		.wallet__center.center
+			.wallet__head
+				a.wallet__back(href='index.html') 
+					+i('arrow-prev')
+					.wallet__stage.h2 Connect your wallet
+			.wallet__body
+				.wallet__menu
+					a.wallet__link(href="#")
+						.wallet__icon(style="background-color: #9757D7;")
+							+i('wallet')
+							svg.icon.icon-check(style="fill: #9757D7;")
+								use(xlink:href="#icon-check")
+						span Coinbase Wallet
+						.wallet__arrow
+							+i('arrow-next')
+					a.wallet__link(href="#")
+						.wallet__icon(style="background-color: #3772FF;")
+							+i('wallet')
+							svg.icon.icon-check(style="fill: #3772FF;")
+								use(xlink:href="#icon-check")
+						span Coinbase Wallet
+						.wallet__arrow
+							+i('arrow-next')
+					a.wallet__link(href="#")
+						.wallet__icon(style="background-color: #45B26B;")
+							+i('wallet')
+							svg.icon.icon-check(style="fill: #45B26B;")
+								use(xlink:href="#icon-check")
+						span MyEtherWallet
+						.wallet__arrow
+							+i('arrow-next')
+					a.wallet__link(href="#")
+						.wallet__icon(style="background-color: #EF466F;")
+							+i('wallet')
+							svg.icon.icon-check(style="fill: #EF466F;")
+								use(xlink:href="#icon-check")
+						span Wallet Connect
+						.wallet__arrow
+							+i('arrow-next')
+				.wallet__wrapper
+					.wallet__bg
+						img(srcSet="img/content/connect-bg@2x.jpg 2x" src="img/content/connect-bg.jpg" alt="Connect wallet")
+					.wallet__group
+						.wallet__item
+							.wallet__title.h3 Scan to connect
+							.wallet__text Powered by UI8.Wallet
+							.wallet__box
+								.wallet__code
+									img(src="img/content/qr-code.png" alt="Qr-code")
+							button.button-stroke.wallet__button Don’t have a wallet app?
+						.wallet__item
+							.wallet__title.h3 Terms of service
+							.wallet__text Please take a few minutes to read and understand <span>Stacks Terms of Service</span>. To continue, you’ll need to accept the terms of services by checking the boxes.
+							.wallet__preview
+								img(srcSet="img/content/connect-pic@2x.jpg 2x" src="img/content/connect-pic.jpg" alt="Connect wallet")
+							.wallet__variants
+								+checkbox("I am at least 13 year old", true)
+								+checkbox("I agree Stack terms of service")
+							.wallet__btns
+								button.button-stroke.wallet__button Cancel
+								a.button.wallet__button(href="index.html#header") Get started now

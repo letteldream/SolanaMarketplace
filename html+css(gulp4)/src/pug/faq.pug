@@ -1,0 +1,71 @@
+---
+title: Crypter-NFT
+classHot: section-pb hot
+---
+extends layouts/layout
+block content
+	.section.faq
+		.faq__center.center
+			.faq__top
+				.faq__stage learn how to get started
+				h1.faq__title.h2 Frequently asked questions
+				.faq__info Join Stacks community now to get free updates and also alot of freebies are waiting for you or <a href="#">Contact Support</a>
+				.mobile-show
+					select.select.js-tabs-select
+						option General
+						option Support
+						option Hosting
+						option Product
+			.faq__row.js-tabs
+				.faq__col
+					.faq__nav
+						a.faq__link.js-tabs-link.active(href="#")
+							+i('home')
+							| General
+						a.faq__link.js-tabs-link(href="#")
+							+i('circle-and-square')
+							| Support
+						a.faq__link.js-tabs-link(href="#")
+							+i('lightning')
+							| Hosting
+						a.faq__link.js-tabs-link(href="#")
+							+i('pen')
+							| Product
+				.faq__col
+					.faq__box.js-tabs-item(style="display: block;")
+						mixin item(head)
+							.faq__item
+								.faq__head=head
+								.faq__body
+									.faq__content The Stacks series of products: Stacks: Landing Page Kit, Stacks: Portfolio Kit, Stacks: eCommerce Kit. "Stacks is a production-ready library of stackable content blocks built in React Native. Mix-and-match dozens of responsive elements to quickly configure your favorite landing page layouts or hit the ground running with 10 pre-built templates, all in light or dark mode."
+									button.button-stroke.button-small.faq__button Learn more
+						+item("How does it work")
+						+item("How to start with Stacks")
+						+item("Dose it suppport Dark Mode")
+						+item("Does it support Auto-Layout")
+						+item("What is Stacks Design System")
+					.faq__box.js-tabs-item
+						+item("How to start with Stacks")
+						+item("Dose it suppport Dark Mode")
+						+item("Does it support Auto-Layout")
+						+item("What is Stacks Design System")
+						+item("How does it work")
+						+item("How to start with Stacks")
+					.faq__box.js-tabs-item
+						+item("Does it support Auto-Layout")
+						+item("What is Stacks Design System")
+						+item("How does it work")
+						+item("Dose it suppport Dark Mode")
+					.faq__box.js-tabs-item
+						+item("How does it work")
+						+item("How to start with Stacks")
+						+item("Dose it suppport Dark Mode")
+						+item("Does it support Auto-Layout")
+						+item("What is Stacks Design System")
+	include partials/hot
+	+popupWallet
+	+popupBid
+
+
+
+			

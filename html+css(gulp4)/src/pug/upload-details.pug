@@ -1,0 +1,157 @@
+---
+title: Crypter-NFT
+---
+extends layouts/layout
+block content
+	.section.upload
+		.upload__center.center
+			.upload__wrapper
+				.upload__head
+					h2.upload__title.h2 Create single collectible
+					a.button-stroke.button-small.upload__button(href="upload-details-multiple.html") Switch to Multiple
+				.upload__form
+					.upload__list
+						.upload__item
+							.upload__category Upload file
+							.upload__note Drag or choose your file to upload
+							.upload__file
+								input.upload__input(type="file")
+								.upload__icon
+									+i('upload-file')
+								.upload__format PNG, GIF, WEBP, MP4 or MP3. Max 1Gb.
+						.upload__item
+							.upload__category Item Details
+							.upload__fieldset
+								.field
+									.field__label Item name
+									.field__wrap
+										input.field__input(type="text" name="item" placeholder='e. g. Redeemable Bitcoin Card with logo"' required)
+								.field
+									.field__label Description
+									.field__wrap
+										input.field__input(type="text" name="description" placeholder="e. g. “After purchasing you will able to recived the logo...”" required)
+								.upload__row
+									.upload__col
+										.field
+											.field__label Royalties
+											.field__wrap
+												select.select
+													option 10%
+													option 20%
+													option 30%
+									.upload__col
+										.field
+											.field__label Size
+											.field__wrap
+												input.field__input(type="text" name="size" placeholder="e. g. Size" required)
+									.upload__col
+										.field
+											.field__label Propertie
+											.field__wrap
+												input.field__input(type="text" name="propertie" placeholder="e. g. Propertie" required)
+					.upload__options
+						.upload__option
+							.upload__box
+								.upload__category Put on sale
+								.upload__text You’ll receive bids on this item
+							+switch(true)
+						.upload__option
+							.upload__box
+								.upload__category Instant sale price
+								.upload__text Enter the price for which the item will be instantly sold
+							+switch
+						.upload__option
+							.upload__box
+								.upload__category Unlock once purchased
+								.upload__text Content will be unlocked after successful transaction
+							+switch
+						.upload__category Choose collection
+						.upload__text Choose an exiting collection or create a new one
+						.upload__cards
+							.upload__card
+								.upload__plus(style="background-color: #4BC9F0;")
+									+i('plus')
+								.upload__subtitle Create collection
+							.upload__card
+								.upload__plus(style="background-color: #45B26B;")
+									+i('plus')
+								.upload__subtitle Crypto Legend - Professor
+							.upload__card
+								.upload__plus(style="background-color: #EF466F;")
+									+i('plus')
+								.upload__subtitle Crypto Legend - Professor
+							.upload__card
+								.upload__plus(style="background-color: #9757D7;")
+									+i('plus')
+								.upload__subtitle Legend Photography
+					.upload__foot
+						button.button-stroke.tablet-show.upload__button.js-preview-open Preview
+						a.button.upload__button.js-popup-open(href="#popup-wallet" data-effect="mfp-zoom-in")
+							span Create item
+							+i('arrow-next')
+						.upload__saving Auto saving
+							+loader
+			.preview.js-preview
+				.preview__inner
+					button.preview__close.js-preview-close
+						+i('close')
+					.preview__info Preview
+					+card("img/content/card-pic-1@2x.jpg", "img/content/card-pic-1.jpg", "Black Golden Tiger")
+					a.preview__clear(href="#")
+						+i('circle-close')
+						| Clear all
+	.popup.popup_wallet.mfp-hide#popup-wallet
+		.popup__title.h4 Folow steps
+		.steps
+			.steps__item
+				.steps__head
+					.steps__icon
+						+i('upload-file')
+					.steps__details
+						.steps__info Upload files & Mint token
+						.steps__text Call contract method
+				button.button.steps__button Start now
+			.steps__item
+				.steps__head
+					.steps__icon
+						+i('pencil')
+					.steps__details
+						.steps__info Sign sell order
+						.steps__text Sign sell order using your wallet
+				button.button.steps__button.disabled Start now
+			//- .steps__item
+			//- 	.steps__head
+			//- 		.steps__icon
+			//- 			+loaderCircle
+			//- 		.steps__details
+			//- 			.steps__info Sign sell order
+			//- 			.steps__text Sign sell order using your wallet
+			//- 	button.button.steps__button.loading
+			//- 		+loader('loader_white')
+			//- .steps__item.error
+			//- 	.steps__head
+			//- 		.steps__icon
+			//- 			+i('pencil')
+			//- 		.steps__details
+			//- 			.steps__info Sign sell order
+			//- 			.steps__text Sign sell order using your wallet
+			//- 	button.button.steps__button.error Failed
+			.steps__item
+				.steps__head
+					.steps__icon
+						+i('bag')
+					.steps__details
+						.steps__info Sign lock order
+						.steps__text Sign sell order using your wallet
+				button.button.steps__button.disabled.js-popup-close Start now
+		.steps__note Something went wrong, please <a class='js-popup-close' href="#">try again</a>
+
+
+
+
+
+
+
+
+
+

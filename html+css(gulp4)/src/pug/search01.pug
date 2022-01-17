@@ -1,0 +1,76 @@
+---
+title: Crypter-NFT
+---
+extends layouts/layout
+block content
+	.section-pt80.catalog
+		.catalog__center.center
+			.catalog__top
+				.catalog__title Type your keywords
+				form.catalog__search
+					input.catalog__input(type="text" name="search" placeholder="Search..." required)
+					button.catalog__result
+						+i('search')
+			.catalog__sorting
+				select.select
+					option Newest
+					option Oldest
+				.catalog__nav
+					a.catalog__link.active(href="#") All items
+					a.catalog__link(href="#") Art
+					a.catalog__link(href="#") Game
+					a.catalog__link(href="#") Photography
+					a.catalog__link(href="#") Music
+					a.catalog__link(href="#") Video
+			.catalog__row
+				.catalog__filters
+					.range
+						.range__label Price range
+						.range__slider.js-slider(
+							data-min='0.01'
+							data-max='10'
+							data-start='5'
+							data-step='0.1'
+							data-tooltips='true'
+							data-postfix=' ETH')
+						.range__indicators
+							.range__text 0.01 ETH
+							.range__text 10 ETH
+					.catalog__group
+						.field
+							.field__label price
+							select.select
+								option Most liked
+								option Least liked
+						.field
+							.field__label color
+							select.select
+								option All colors
+								option Black
+								option Green
+								option Pink
+								option Purple
+						.field
+							.field__label creator
+							select.select
+								option Verified only
+								option All
+								option Most liked
+					a.catalog__reset(href="#")
+						+i('close-circle-fill')
+						| Reset filter
+				.catalog__wrapper
+					.catalog__list
+						+card("img/content/card-pic-1@2x.jpg", "img/content/card-pic-1.jpg", "Amazing digital art")
+						+card("img/content/card-pic-2@2x.jpg", "img/content/card-pic-2.jpg", "Ribbon Hunter")
+						+card("img/content/card-pic-3@2x.jpg", "img/content/card-pic-3.jpg", "Amazing digital art")
+						+card("img/content/card-pic-4@2x.jpg", "img/content/card-pic-4.jpg", "Ribbon Hunter")
+						+card("img/content/card-pic-5@2x.jpg", "img/content/card-pic-5.jpg", "Amazing digital art")
+						+card("img/content/card-pic-6@2x.jpg", "img/content/card-pic-6.jpg", "Ribbon Hunter")
+						+card("img/content/card-pic-7@2x.jpg", "img/content/card-pic-7.jpg", "Amazing digital art")
+						+card("img/content/card-pic-1@2x.jpg", "img/content/card-pic-1.jpg", "Amazing digital art")
+						+card("img/content/card-pic-2@2x.jpg", "img/content/card-pic-2.jpg", "Ribbon Hunter")
+					.catalog__btns
+						button.button-stroke.catalog__button Load more
+	+popupWallet
+	+popupBid

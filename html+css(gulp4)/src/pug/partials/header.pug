@@ -1,0 +1,77 @@
+header.header.js-header(class=classHeader data-id="#header")
+	.header__center.center
+		a.header__logo(href="index.html")
+			img.some-icon(src="img/logo-dark.png" alt="Crypter NFT")
+			img.some-icon-dark(src="img/logo-light.png" alt="Crypter NFT")
+		.header__wrapper.js-header-wrapper
+			nav.header__nav
+				a.header__link(href="search01.html") Discover
+				a.header__link(href="faq.html") How it works
+				a.header__link(href="item.html") Create item
+				a.header__link(href="profile.html") Profile
+			form.header__search
+				input.header__input(type="text" name="search" placeholder="Search" required)
+				button.header__result
+					+i('search')
+			a.button-small.header__button(href="upload-variants.html") Upload
+			a.button-stroke.button-small.header__button.header__connect(href="connect-wallet.html") Connect Wallet
+		.header__item.header__item_notification.js-header-item
+			button.header__head.js-header-head.active
+				+i('notification')
+			.header__body.js-header-body
+				.header__title.h4 Notification
+				.header__list
+					mixin notification(image, subtitle, price, date)
+						a.header__notification(href="activity.html")
+							.header__preview
+								img(src=image alt="Notification")
+							.header__details
+								.header__subtitle=subtitle
+								.header__price=price
+								.header__date=date
+							.header__status
+					+notification("img/content/notification-pic-1.jpg", "ETH received", "0.08 ETH recived", "2 days ago")
+					+notification("img/content/notification-pic-2.jpg", "C O I N Z", "New bid 0.2 ETH", "3 days ago")
+					+notification("img/content/notification-pic-3.jpg", "ETH received", "0.08 ETH recived", "4 days ago")
+					+notification("img/content/notification-pic-4.jpg", "ETH received", "0.08 ETH recived", "5 days ago")
+					a.button-small.header__button(href="activity.html") See all
+		a.button-small.header__button.header__upload(href="upload-variants.html") Upload
+		.header__item.header__item_user.js-header-item.js-demo-user
+			button.header__head.js-header-head
+				.header__avatar
+					img(src="img/content/avatar-user.jpg" alt="Avatar")
+				.header__wallet 7.00698 <span class="header__currency">ETH</span>
+			.header__body.js-header-body
+				.header__name Enrico Cole
+				.header__code
+					.header__number 0xc4c16ab5ac7d...b21a
+					button.header__copy
+						+i('copy')
+				.header__wrap
+					.header__line
+						.header__img
+							img(src="img/content/etherium-circle.jpg" alt="Etherium")
+						.header__details
+							.header__info Balance
+							.header__money 4.689 ETH
+					button.button-stroke.button-small.header__button Manage fun on Coinbase
+				.header__menu
+					a.header__link(href="profile.html")
+						.header__icon
+							+i('user')
+						.header__text My profile
+					a.header__link(href="item.html")
+						.header__icon
+							+i('image')
+						.header__text My items
+					.header__link
+						.header__icon
+							+i('bulb')
+						.header__text Dark theme
+						+theme
+					a.header__link(href="#")
+						.header__icon
+							+i('exit')
+						.header__text Disconnect
+		a.button-stroke.button-small.header__button.header__connect(href="connect-wallet.html") Connect Wallet
+		button.header__burger.js-header-burger

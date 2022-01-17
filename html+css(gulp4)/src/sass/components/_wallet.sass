@@ -1,0 +1,228 @@
+.wallet
+    &__head
+        margin-bottom: 80px
+        padding-bottom: 40px
+        border-bottom: 2px solid $neutrals6
+        +m
+            margin-bottom: 40px
+            padding-bottom: 24px
+        +dark
+            border-color: $neutrals3
+    &__back
+        display: inline-flex
+        align-items: center
+        color: $neutrals2
+        .icon
+            width: 24px
+            height: 24px
+            margin-right: 24px
+            transition: transform .2s
+            +m
+                flex-shrink: 0
+                width: 24px
+                height: 24px
+                margin-right: 16px
+        +dark
+            color: $neutrals8
+            .icon
+                fill: $neutrals8
+        &:hover
+            .icon
+                transform: translateX(-2px)
+    &__stage
+        +m
+            font-size: 24px
+    &__body
+        display: flex
+        +m
+            display: block
+    &__menu
+        flex-shrink: 0
+        width: 544px
+        margin-right: auto
+        +d
+            width: 384px
+        +t
+            width: 300px
+        +m
+            width: 100%
+            margin-bottom: 40px
+    &__wrapper
+        flex-grow: 1
+        padding-left: 128px
+        +x
+            padding-left: 64px
+        +t
+            padding-left: 32px
+        +m
+            padding-left: 0
+    &__item
+        display: none 
+    &__link
+        position: relative
+        display: flex
+        align-items: center
+        padding: 32px 64px 32px 32px
+        border-radius: 12px
+        +body-bold-1
+        color: $neutrals2 
+        cursor: pointer
+        +t
+            padding: 0 30px 0 0
+            font-size: 20px
+        +dark
+            color: $neutrals8 
+        &:hover
+            .wallet__arrow
+                opacity: 1
+        &.active
+            box-shadow: inset 0 0 0 2px $neutrals6
+            +t
+                box-shadow: none
+            +dark
+                box-shadow: inset 0 0 0 2px $neutrals3
+                +t
+                    box-shadow: none
+            .wallet__icon
+                &:before
+                    opacity: 1
+                .icon
+                    &:first-child
+                        opacity: 0
+                    &:nth-child(2)
+                        opacity: 1
+            .wallet__arrow
+                opacity: 1
+        &:not(:last-child)
+            +t
+                margin-bottom: 24px
+    &__icon
+        position: relative
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 64px
+        height: 64px
+        margin-right: 32px
+        border-radius: 50%
+        flex-shrink: 0
+        +d
+            margin-right: 24px
+        +t
+            margin-right: 16px
+        &:before
+            content: ""
+            position: absolute
+            top: 3px
+            left: 3px
+            right: 3px
+            bottom: 3px
+            border-radius: 50%
+            background: $neutrals8
+            opacity: 0
+            transition: opacity .2s
+            +dark
+                background: $neutrals1
+        .icon
+            transition: opacity .2s
+            &:first-child
+                width: 24px
+                height: 24px
+                fill: $neutrals8
+            &:nth-child(2)
+                position: absolute
+                top: 50%
+                left: 50%
+                width: 18px
+                height: 18px
+                transform: translate(-50%,-50%)
+                fill: $blue
+                opacity: 0
+    &__arrow
+        position: absolute
+        top: 50%
+        right: 37px
+        transform: translateY(-50%)
+        opacity: 0
+        transition: opacity .2s
+        +d
+            right: 24px
+        +t
+            right: 0
+        .icon
+            width: 14px
+            height: 14px
+            fill: $neutrals2
+            +dark
+                fill: $neutrals8
+    &__bg
+        img
+            width: 100%
+            border-radius: 24px
+    &__title
+        margin-bottom: 8px
+        +m
+            text-align: center
+            font-size: 32px
+    &__text
+        margin-bottom: 24px
+        +caption-2
+        color: $neutrals4
+        +m
+            text-align: center
+        span
+            font-weight: 600
+            color: $neutrals2
+            +dark
+                color: $neutrals8
+    &__box
+        margin-bottom: 24px
+        padding: 18%
+        background: $neutrals7
+        border-radius: 16px
+        +m
+            padding: 10%
+        +dark
+            background: $neutrals2
+    &__code
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 29%
+        border-radius: 12px
+        border: 1px solid $neutrals6
+        background: $neutrals8
+        cursor: pointer
+        box-shadow: 0px 64px 64px -48px rgba(31, 47, 70, 0.12)
+        +m
+            padding: 20%
+        +dark
+            background: $neutrals5
+            border-color: $neutrals3
+        img
+            width: 100%
+    &__preview
+        margin: 40px 0
+        img
+            width: 100%
+            border-radius: 12px
+    &__variants
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        margin-bottom: 40px
+    .checkbox
+        &:not(:last-child)
+            margin-bottom: 12px
+    &__button
+        +m
+            width: 100%
+    &__btns
+        display: flex
+        +m
+            display: block
+        .wallet__button
+            &:not(:last-child)
+                margin-right: 8px
+                +m
+                    margin: 0 0 8px

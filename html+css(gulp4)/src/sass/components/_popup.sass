@@ -1,0 +1,232 @@
+.popup
+    position: relative
+    max-width: 448px
+    margin: 15px auto
+    padding: 32px 
+    background: $neutrals8
+    border-radius: 16px
+    +dark
+        background: $neutrals1
+        box-shadow: inset 0 0 0 1px $neutrals2
+    &__item
+        display: none 
+    &__title
+        margin-bottom: 32px
+    &__info
+        margin-bottom: 32px
+        +body-2
+        strong
+            font-weight: 500
+    &__row
+        display: flex
+        padding-top: 12px
+        &:first-child
+            padding: 0 0 12px
+            border-bottom: 1px solid $neutrals6
+            font-weight: 500
+            +dark
+                border-color: $neutrals3
+    &__col
+        +body-2
+        &:first-child
+            color: $neutrals4
+        &:nth-child(2)
+            margin-left: auto
+            padding-left: 20px
+            font-weight: 500
+    &__btns
+        margin-top: 32px
+    &__btns &__button
+        width: 100%
+        &:not(:last-child)
+            margin-bottom: 8px
+    &__attention
+        display: flex
+        align-items: center
+        margin-top: 32px
+        padding: 24px
+        border-radius: 8px
+        background: rgba($pink, .08)
+        color: $pink
+        +m
+            align-items: stretch
+    &__preview
+        flex-shrink: 0
+        width: 32px
+        margin-right: 16px
+        .icon
+            width: 32px
+            height: 32px
+            fill: $pink
+    &__details
+        flex-grow: 1
+    &__category
+        +body-bold-2
+    &__text
+        +caption-2
+    &__avatar
+        width: 48px
+        height: 48px
+        img
+            width: 100%
+            height: 100%
+            border-radius: 50%
+            object-fit: cover
+    &__attention &__avatar
+        flex-shrink: 0
+        margin-left: 16px 
+    &__img
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 80px
+        height: 80px
+        margin: 72px auto 32px
+        border-radius: 50%
+        background: $purple
+        .icon
+            width: 24px
+            height: 24px
+            fill: $neutrals8
+    &__description
+        margin-bottom: 32px
+        text-align: center
+        +body-bold-2
+    &__subtitle
+        margin-bottom: 16px
+        +body-bold-1
+    &__line
+        display: flex
+        margin-bottom: 32px
+        strong
+            white-space: nowrap
+            font-weight: 500
+    &__icon
+        position: relative
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-shrink: 0
+        width: 48px
+        height: 48px
+        margin-right: 16px
+        background: $purple
+        border: 2px solid $purple
+        border-radius: 50%
+        transition: all .2s
+        .icon
+            width: 24px
+            height: 24px
+            fill: $neutrals8
+            transition: fill .2s
+        .loader
+            position: absolute
+            top: -2px
+            left: -2px
+            right: -2px
+            bottom: -2px
+    &__box
+        flex-grow: 1
+    &__note
+        margin-bottom: 32px
+        +body-2
+        color: $neutrals4
+    &__input
+        width: 100%
+        height: 48px
+        border-bottom: 1px solid $neutrals6
+        background: none
+        border-radius: 0
+        +poppins
+        +body-bold-2
+        color: $neutrals2
+        transform: border-color .2s
+        +dark
+            border-color: $neutrals3
+            color: $neutrals8 
+        +placeholder
+            color: $neutrals4
+        &:focus
+            border-color: $neutrals4
+            +dark
+                border-color: $neutrals4
+    &__bid
+        display: flex
+        align-items: center
+    &__rate
+        min-width: 100px 
+        height: 24px
+        background: none
+        border: none
+        text-align: right
+        +poppins
+        font-weight: 500 
+        font-size: 16px
+    &__bid &__currency
+        margin-left: 4px 
+    .switch
+        flex-shrink: 0
+        margin-left: 16px
+    .mfp-close
+        position: absolute
+        top: 32px
+        right: 32px
+        width: 40px
+        height: 40px
+        border: 2px solid $neutrals6
+        border-radius: 50% 
+        line-height: normal
+        opacity: 1
+        background: $neutrals8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='15' fill='none' viewBox='0 0 14 15'%3E%3Cpath fill-rule='evenodd' d='M.293 1.289a1 1 0 0 1 1.414 0L7 6.582l5.293-5.293a1 1 0 0 1 1.414 1.414L8.414 7.996l5.293 5.293a1 1 0 0 1-1.414 1.414L7 9.41l-5.293 5.293a1 1 0 0 1-1.414 0 1 1 0 0 1 0-1.414l5.293-5.293L.293 2.703a1 1 0 0 1 0-1.414z' fill='%2323262F'/%3E%3C/svg%3E") no-repeat 50% 48% / 14px auto
+        font-size: 0
+        transition: all .2s 
+        -webkit-tap-highlight-color: rgba(0,0,0,0)
+        +dark
+            border-color: $neutrals3
+            background-color: $neutrals1
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath fill='%23FCFCFD' d='M1.613.2l.094.083L5 3.585 8.293.293a1 1 0 0 1 1.414 0 1 1 0 0 1 .083 1.32l-.083.094L6.415 5l3.292 3.293a1 1 0 0 1-1.32 1.497l-.094-.083L5 6.415 1.707 9.707A1 1 0 0 1 .21 8.387l.083-.094L3.585 5 .293 1.707a1 1 0 0 1 0-1.414A1 1 0 0 1 1.613.21z'/%3E%3C/svg%3E")
+        &:hover
+            border-color: $neutrals2
+            +dark
+                border-color: $neutrals8
+    &_price
+        .field__input,
+        .field__currency
+            font-size: 24px
+            font-weight: 600
+            text-transform: uppercase 
+
+.mfp-container
+    padding: 20px
+    +m
+        padding: 0
+        
+@media (max-width: 900px)
+    .mfp-container
+        padding: 0 16px 
+            
+.mfp-bg
+    background: rgba($neutrals1,.9)
+    +dark
+        background: rgba($neutrals2,.9)
+
+.mfp-zoom-in 
+    .popup
+        opacity: 0
+        transition: all 0.2s ease-in-out
+        transform: scale(0.8) 
+    &.mfp-bg 
+        opacity: 0
+        transition: all 0.2s ease-out
+    &.mfp-ready
+        .popup
+            opacity: 1
+            transform: scale(1) 
+        &.mfp-bg 
+            opacity: 1
+    &.mfp-removing 
+        .popup 
+            transform: scale(0.8) 
+            opacity: 0
+        &.mfp-bg
+            opacity: 0

@@ -1,0 +1,70 @@
+---
+title: Crypter-NFT
+---
+extends layouts/layout
+block content
+	.control
+		.control__center.center
+			a.button-stroke.button-small.control__button(href="profile.html")
+				+i('arrow-prev')
+				span Back to profile
+			.breadcrumbs
+				ul.breadcrumbs
+					li.breadcrumbs__item
+						a.breadcrumbs__link(href="profile.html") Home
+					li.breadcrumbs__item Edit Profile
+	.section-pt80.details
+		.details__center.center
+			.details__top
+				h1.details__title.h2 Edit profile
+				.details__info You can set preferred display name, create <strong>your profile URL</strong> and manage other personal settings.
+			.details__row
+				.details__col
+					.details__user
+						.details__avatar
+							img(src="img/content/avatar-1.jpg" alt="Avatar")
+						.details__wrap
+							.details__stage Profile photo
+							.details__text We recommend an image of at least 400x400. Gifs work too <span role="img" aria-label="hooray">🙌</span>
+							.details__file
+								input.details__input(type="file")
+								button.button-stroke.button-small.details__button Upload
+				.details__col
+					.details__list
+						.details__item
+							.details__category Account info
+							.details__fieldset
+								.field
+									.field__label display name
+									.field__wrap
+										input.field__input(type="text" name="name" placeholder="Enter your display name" required)
+								.field
+									.field__label Custom url
+									.field__wrap
+										input.field__input(type="text" name="url" placeholder="ui8.net/Your custom URL" required)
+								.field.field_textarea
+									.field__label Bio
+									.field__wrap
+										textarea.field__textarea(name="bio" placeholder="About yourselt in a few words" required)
+						.details__item
+							.details__category Social
+							.details__fieldset
+								.field
+									.field__label portfolio or website
+									.field__wrap
+										input.field__input(type="text" name="portfolio" placeholder="Enter URL" required)
+								.details__box
+									.field
+										.field__label twitter
+										.field__wrap
+											input.field__input(type="text" name="twitter" placeholder="@twitter username" required)
+									button.button-stroke.button-small.details__button Verify account
+							button.button-stroke.button-small.details__button
+								+i('plus-circle')
+								span Add more social account
+					.details__note To update your settings you should sign message through your wallet. Click 'Update profile' then sign the message
+					.details__btns
+						button.button.details__button Update Profile
+						a.details__clear(href="#")
+							+i('circle-close')
+							| Clear all

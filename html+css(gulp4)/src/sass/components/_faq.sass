@@ -1,0 +1,111 @@
+.faq
+    &__top
+        max-width: 640px
+        margin-bottom: 80px
+        +t
+            margin-bottom: 64px
+        +m
+            margin-bottom: 40px
+    &__stage
+        margin-bottom: 12px
+        +hairline-2
+        color: $neutrals4
+    &__title
+        margin-bottom: 20px
+    &__info
+        +body-2
+        color: $neutrals3
+        +m
+            margin-bottom: 40px
+        +dark
+            color: $neutrals6
+        a
+            font-weight: 500
+            color: $blue
+            &:hover
+                text-decoration: underline
+    &__row
+        display: flex
+        +m
+            display: block
+    &__col
+        &:first-child
+            flex-shrink: 0
+            width: 160px
+            +m
+                display: none
+        &:nth-child(2)
+            flex-grow: 1
+            padding-left: 225px
+            +x
+                padding-left: 128px
+            +d
+                padding-left: 64px
+            +t
+                padding-left: 32px
+            +m
+                padding: 0
+    &__nav
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+    &__link
+        display: flex
+        align-items: center
+        +button-2
+        color: $neutrals4
+        cursor: pointer
+        transition: color .2s
+        .icon
+            width: 16px
+            height: 16px
+            margin-right: 16px
+            fill: $neutrals4
+            transition: fill .2s
+        &:hover,
+        &.active
+            color: $neutrals2
+            .icon
+                fill: $neutrals2
+            +dark
+                color: $neutrals8
+                .icon
+                    fill: $neutrals8
+        &:not(:last-child)
+            margin-bottom: 40px
+    &__box
+        display: none
+    &__item
+        border-top: 1px solid $neutrals6
+        +dark
+            border-color: $neutrals3
+        &.active
+            .faq__head
+                &:before
+                    transform: translateY(-50%) rotate(180deg)
+    &__head
+        position: relative
+        padding: 32px 40px 32px 0
+        +body-bold-2
+        cursor: pointer
+        -webkit-tap-highlight-color: rgba(0,0,0,0)
+        transition: color .2s
+        &:before
+            content: ""
+            position: absolute
+            top: 50%
+            right: 8px
+            width: 10px
+            height: 6px
+            transform: translateY(-50%)
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none' viewBox='0 0 10 6'%3E%3Cpath fill-rule='evenodd' d='M9.207.793a1 1 0 0 0-1.414 0L5 3.586 2.207.793A1 1 0 1 0 .793 2.207l3.5 3.5a1 1 0 0 0 1.414 0l3.5-3.5a1 1 0 0 0 0-1.414z' fill='%23777e91'/%3E%3C/svg%3E") no-repeat 50% 50% / 100% auto
+            transition: transform .2s
+        &:hover
+            color: $blue
+    &__body
+        display: none
+        padding-bottom: 32px
+        +body-2
+        color: $neutrals4
+    &__button
+        margin-top: 24px

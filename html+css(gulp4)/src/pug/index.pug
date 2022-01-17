@@ -1,0 +1,358 @@
+---
+title: Crypter-NFT
+classHot: section hot
+---
+extends layouts/layout
+block content
+	.section.main
+		.main__center.center
+			.main__head
+				.main__stage Create, explore, & collect digital art NFTs.
+				h3.main__title.h3 The new creative economy.
+				a.button-stroke.main__button(href="search01.html") Start your search
+			.main__wrapper
+				.main__slider.js-slider-main
+					mixin mainSlide(src, srcSet, title, avatar, creator)
+						.main__slide
+							.main__row
+								.player
+									.player__preview
+										img(srcSet=`${srcSet} 2x` src=src alt="Video preview")
+									.player__control
+										button.player__button
+											+i('play')
+										.player__line
+											.player__progress(style="width: 20%;")
+										.player__time 2:20
+										button.player__button
+											+i('volume')
+										button.player__button
+											+i('full-screen')
+								.main__details
+									.main__subtitle.h1=title 
+									.main__line
+										.main__item
+											.main__avatar
+												img(src=avatar alt="Avatar")
+											.main__description
+												.main__category Creator
+												.main__text=creator
+										.main__item
+											.main__icon
+												+i('stop')
+											.main__description
+												.main__category Instant price
+												.main__text 3.5 ETH
+									.main__wrap
+										.main__info Current Bid
+										.main__currency 1.00 ETH
+										.main__price $3,618.36
+										.main__info Auction ending in
+										.main__timer
+									.main__btns
+										a.button.main__button.js-popup-open(href="#popup-connect" data-effect="mfp-zoom-in") Place a bid
+										a.button-stroke.main__button(href="item.html") View item 
+					+mainSlide("img/content/video-preview.jpg", "img/content/video-preview@2x.jpg", "the creator network®", "img/content/avatar-creator.jpg", "Enrico Cole")
+					+mainSlide("img/content/video-preview-1.png", "img/content/video-preview-1@2x.png", "Marco carrillo®", "img/content/avatar-creator.jpg", "Enrico Cole")
+					+mainSlide("img/content/video-preview-2.png", "img/content/video-preview-2@2x.png", "the creator network®", "img/content/avatar-creator.jpg", "Enrico Cole")
+					+mainSlide("img/content/video-preview-3.png", "img/content/video-preview-3@2x.png", "the creator network®", "img/content/avatar-creator.jpg", "Enrico Cole")
+	.section-pb.selection
+		.selection__center.center
+			.selection__row
+				.selection__col
+					a.selection__card(href="item.html")
+						.selection__preview
+							img(srcSet="img/content/selection-pic-1@2x.jpg 2x" src="img/content/selection-pic-1.jpg" alt="Selection")
+						.selection__head
+							.selection__line
+								.selection__avatar
+									img(src="img/content/avatar-1.jpg" alt="Avatar")
+								.selection__description
+									.selection__title The future of ETH®
+									.selection__counter 18 in stock
+							.selection__box
+								.selection__content Highest bid
+								.selection__price 1.125 ETH
+				.selection__col
+					a.selection__item(href="item.html")
+						.selection__preview
+							img(srcSet="img/content/selection-pic-2@2x.jpg 2x" src="img/content/selection-pic-2.jpg" alt="Selection")
+						.selection__description
+							.selection__title ETH never die
+							.selection__line
+								.selection__avatar
+									img(src="img/content/avatar-4.jpg" alt="Avatar")
+								.selection__price 0.27 ETH
+								.selection__content 1 of 12
+							button.button-stroke.button-small.selection__button Place a bid
+					a.selection__item(href="item.html")
+						.selection__preview
+							img(srcSet="img/content/selection-pic-1@2x.jpg 2x" src="img/content/selection-pic-1.jpg" alt="Selection")
+						.selection__description
+							.selection__title Future coming soon
+							.selection__line
+								.selection__avatar
+									img(src="img/content/avatar-3.jpg" alt="Avatar")
+								.selection__price 0.27 ETH
+								.selection__content 1 of 3
+							button.button-stroke.button-small.selection__button Place a bid
+					a.selection__item(href="item.html")
+						.selection__preview
+							img(srcSet="img/content/selection-pic-3@2x.jpg 2x" src="img/content/selection-pic-3.jpg" alt="Selection")
+						.selection__description
+							.selection__title Elon Musk silver coin 3d print
+							.selection__line
+								.selection__avatar
+									img(src="img/content/avatar-4.jpg" alt="Avatar")
+								.selection__price 0.27 ETH
+								.selection__content 1 of 4
+							button.button-stroke.button-small.selection__button Place a bid
+			.selection__sidebar
+				.selection__info Latest upload from creators <span role="img" aria-label="fire">🔥</span>
+				.selection__list
+					.selection__user
+						.selection__avatar
+							img(src="img/content/avatar-1.jpg" alt="Avatar")
+							.selection__number 6
+						.selection__description
+							.selection__name Payton Harris
+							.selection__price <span>2.456</span> ETH
+					.selection__user
+						.selection__avatar
+							img(src="img/content/avatar-2.jpg" alt="Avatar")
+							.selection__number 2
+						.selection__description
+							.selection__name Anita Bins
+							.selection__price <span>2.456</span> ETH
+					.selection__user
+						.selection__avatar
+							img(src="img/content/avatar-3.jpg" alt="Avatar")
+							.selection__number 3
+						.selection__description
+							.selection__name Joana Wuckert
+							.selection__price <span>2.456</span> ETH
+					.selection__user
+						.selection__avatar
+							img(src="img/content/avatar-4.jpg" alt="Avatar")
+							.selection__number 4
+						.selection__description
+							.selection__name Lorena Ledner
+							.selection__price <span>2.456</span> ETH
+				a.button-stroke.button-small.selection__button(href="search01.html")
+					<span>Discover more</span>
+					+i('arrow-next')
+	.section-bg.popular
+		.popular__center.center
+			.popular__top
+				.popular__box
+					.popular__stage Popular
+					select.select-empty
+						option Sellers
+						option Buyers
+				.field
+					.field__label timeframe
+					.field__wrap
+						select.select
+							option Today
+							option Morning
+							option Dinner
+							option Evening
+			.popular__wrapper
+				.popular__slider.js-slider-popular
+					mixin popularSlide(name, sign, number, color, avatar, reward)
+						.popular__slide
+							.popular__item
+								.popular__head
+									.popular__rating(style="background-color:" + color + ";")
+										.popular__icon
+											img(src=sign alt="Rating")
+										.popular__number #
+											=number
+									.popular__control
+										button.popular__button.popular__add
+											+i('add-square')
+											+i('minus-square')
+										a.popular__button(href="profile.html")
+											+i('arrow-expand')
+								.popular__body
+									.popular__avatar
+										.popular__preview
+											img(src=avatar alt="Avatar")
+										.popular__reward
+											img(src=reward alt="Reward")
+									.popular__name=name
+									.popular__price <span>2.456</span> ETH
+					+popularSlide("Edd Harris", "img/content/cup.svg", "1", "#3772FF", "img/content/avatar-5.jpg", "img/content/reward-1.svg")
+					+popularSlide("Odell Hane", "img/content/donut.svg", "2", "#9757D7", "img/content/avatar-6.jpg", "img/content/reward-1.svg")
+					+popularSlide("Marlee Kuphal", "img/content/lightning.svg", "3", "#45B26B", "img/content/avatar-7.jpg", "img/content/reward-1.svg")
+					+popularSlide("Payton Kunde", "img/content/donut.svg", "4", "#23262F", "img/content/avatar-8.jpg", "img/content/reward-1.svg")
+					+popularSlide("Payton Buckridge", "img/content/donut.svg", "5", "#777E90", "img/content/avatar-9.jpg", "img/content/reward-1.svg")
+					+popularSlide("Edd Harris", "img/content/cup.svg", "1", "#3772FF", "img/content/avatar-5.jpg", "img/content/reward-1.svg")
+					+popularSlide("Odell Hane", "img/content/donut.svg", "2", "#9757D7", "img/content/avatar-6.jpg", "img/content/reward-1.svg")
+					+popularSlide("Marlee Kuphal", "img/content/lightning.svg", "3", "#45B26B", "img/content/avatar-7.jpg", "img/content/reward-1.svg")
+					+popularSlide("Payton Kunde", "img/content/donut.svg", "4", "#23262F", "img/content/avatar-8.jpg", "img/content/reward-1.svg")
+	include partials/hot
+	.section-bg.collections
+		.collections__center.center
+			.collections__wrapper
+				h3.collections__title.h3 Hot collections
+				.collections__inner
+					.collections__slider.js-slider-collections
+						a.collections__item(href="profile.html")
+							.collections__gallery
+								.collections__preview
+									img(src="img/content/photo-1.1.jpg" alt="Collections")
+								.collections__preview
+									img(src="img/content/photo-1.2.jpg" alt="Collections")
+								.collections__preview
+									img(src="img/content/photo-1.3.jpg" alt="Collections")
+								.collections__preview
+									img(src="img/content/photo-1.4.jpg" alt="Collections")
+							.collections__subtitle Awesome collection
+							.collections__line
+								.collections__user
+									.collections__avatar
+										img(src="img/content/avatar-1.jpg" alt="Avatar")
+									.collections__author By <span>Kennith Olson</span>
+								.status-stroke-black.collections__counter <span>28 items</span>
+						a.collections__item(href="profile.html")
+							.collections__gallery
+								.collections__preview
+									img(src="img/content/photo-2.1.jpg" alt="Collections")
+								.collections__preview
+									img(src="img/content/photo-2.2.jpg" alt="Collections")
+								.collections__preview
+									img(src="img/content/photo-2.3.jpg" alt="Collections")
+								.collections__preview
+									img(src="img/content/photo-2.4.jpg" alt="Collections")
+							.collections__subtitle Awesome collection
+							.collections__line
+								.collections__user
+									.collections__avatar
+										img(src="img/content/avatar-3.jpg" alt="Avatar")
+									.collections__author By <span>Willie Barton</span>
+								.status-stroke-black.collections__counter <span>28 items</span>
+						a.collections__item(href="profile.html")
+							.collections__gallery
+								.collections__preview
+									img(src="img/content/photo-3.1.jpg" alt="Collections")
+								.collections__preview
+									img(src="img/content/photo-3.2.jpg" alt="Collections")
+								.collections__preview
+									img(src="img/content/photo-3.3.jpg" alt="Collections")
+								.collections__preview
+									img(src="img/content/photo-3.4.jpg" alt="Collections")
+							.collections__subtitle Awesome collection
+							.collections__line
+								.collections__user
+									.collections__avatar
+										img(src="img/content/avatar-4.jpg" alt="Avatar")
+									.collections__author By <span>Halle Jakubowski</span>
+								.status-stroke-black.collections__counter <span>28 items</span>
+	.section.discover
+		.discover__center.center
+			h3.discover__title.h3 Discover
+			.discover__top
+				select.select
+					option Recently added
+					option Long added
+				.discover__nav
+					a.discover__link.active(href="#") All items
+					a.discover__link(href="#") Art
+					a.discover__link(href="#") Game
+					a.discover__link(href="#") Photography
+					a.discover__link(href="#") Music
+					a.discover__link(href="#") Video
+				.tablet-show
+					select.select
+						option All items
+						option Art
+						option Game
+						option Photography
+						option Music
+						option Video
+				button.discover__filter
+					.discover__text Filter
+					.discover__icon
+						+i('filter')
+						+i('close')
+			.discover__filters
+				.discover__sorting
+					.discover__cell
+						.field
+							.field__label Price
+							.field__wrap
+								select.select
+									option Highest price
+									option The lowest price
+					.discover__cell
+						.field
+							.field__label likes
+							.field__wrap
+								select.select
+									option Most liked
+									option Least liked
+					.discover__cell
+						.field
+							.field__label creator
+							.field__wrap
+								select.select
+									option Verified only
+									option All
+									option Most liked
+					.discover__cell
+						.range
+							.range__label Price range
+							.range__slider.js-slider(
+								data-min='0.01'
+								data-max='10'
+								data-start='5'
+								data-step='0.1'
+								data-tooltips='true'
+								data-postfix=' ETH')
+							.range__indicators
+								.range__text 0.01 ETH
+								.range__text 10 ETH
+			.discover__list
+				.discover__slider.js-slider-discover.js-slider-resize
+					+card("img/content/card-pic-1@2x.jpg", "img/content/card-pic-1.jpg", "Amazing digital art")
+					+card("img/content/card-pic-2@2x.jpg", "img/content/card-pic-2.jpg", "Ribbon Hunter")
+					+card("img/content/card-pic-3@2x.jpg", "img/content/card-pic-3.jpg", "Amazing digital art")
+					+card("img/content/card-pic-4@2x.jpg", "img/content/card-pic-4.jpg", "Ribbon Hunter")
+					+card("img/content/card-pic-5@2x.jpg", "img/content/card-pic-5.jpg", "Amazing digital art")
+					+card("img/content/card-pic-6@2x.jpg", "img/content/card-pic-6.jpg", "Ribbon Hunter")
+					+card("img/content/card-pic-7@2x.jpg", "img/content/card-pic-7.jpg", "Amazing digital art")
+					+card("img/content/card-pic-1@2x.jpg", "img/content/card-pic-1.jpg", "Amazing digital art")
+			.discover__btns
+				button.button-stroke.button-small Load more
+	.section.description
+		.description__center.center
+			.description__wrap
+				.description__stage Save your time with Stacks
+				h1.description__title.h1 Earn free crypto with Crypter
+				.description__text A creative agency that lead and inspire
+				.description__btns
+					a.button.description__button(href="upload-variants.html") Create item
+					a.button-stroke.description__button(href="search01.html") Discover more
+			.description__gallery
+				.description__preview
+					img.some-icon(srcSet="img/content/cubes@2x.png 2x" src="img/content/cubes.png" alt="Cubes")
+					img.some-icon-dark(srcSet="img/content/cubes-dark@2x.png 2x" src="img/content/cubes-dark.png" alt="Cubes")
+				.description__preview
+					img.some-icon(srcSet="img/content/cube@2x.png 2x" src="img/content/cube.png" alt="Cube")
+					img.some-icon-dark(srcSet="img/content/cube-dark@2x.png 2x" src="img/content/cube-dark.png" alt="Cube")
+	.popup.popup_connect.mfp-hide#popup-connect
+		.popup__img
+			+i('wallet')
+		.popup__description You need to connect your wallet first to sign messages and send transaction to Ethereum network
+		.popup__btns
+			a.button.popup__button(href="connect-wallet.html") Connect wallet
+			button.button-stroke.popup__button.js-popup-close Cancel
+	+popupWallet
+	+popupBid
+
+
+
+
+
+

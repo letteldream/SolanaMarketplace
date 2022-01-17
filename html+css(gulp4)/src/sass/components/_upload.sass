@@ -1,0 +1,227 @@
+.upload
+    +x
+        padding-top: 80px
+    +m
+        padding-top: 64px
+    &__center
+        display: flex
+        align-items: flex-start
+        +t
+            display: block
+    &__wrapper
+        flex: 0 0 calc(100% - 352px)
+        width: calc(100% - 352px)
+        padding-right: 128px
+        +x
+            padding-right: 64px
+        +d
+            flex: 0 0 calc(100% - 304px)
+            width: calc(100% - 304px)
+            padding-right: 32px
+        +t
+            width: 100%
+            padding: 0
+    .preview
+        flex-shrink: 0
+        width: 352px  
+        +d
+            width: 304px 
+        +t
+            display: flex
+            position: fixed
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            padding: 48px
+            background: rgba($neutrals1,.9)
+            overflow: auto
+            z-index: 999
+            visibility: hidden
+            opacity: 0
+            transition: all .4s
+            +dark
+                background: rgba($neutrals2,.9)
+            &.visible
+                visibility: visible
+                opacity: 1
+        +m
+            padding: 32px 16px
+    &__head
+        display: flex
+        margin-bottom: 40px
+        +d
+            flex-direction: column-reverse
+            align-items: flex-start
+        +m
+            margin-bottom: 32px
+        .upload__button
+            flex-shrink: 0
+            margin-left: 24px
+            +d
+                margin: 0 0 16px
+    &__title
+        margin-right: auto
+    &__list
+        margin-bottom: 40px
+        padding-bottom: 40px
+        border-bottom: 1px solid $neutrals6
+        +m
+            margin-bottom: 32px
+            padding-bottom: 32px
+        +dark
+            border-color: $neutrals3
+    &__item
+        &:not(:last-child)
+            margin-bottom: 40px
+            +m
+                margin-bottom: 32px
+    &__note
+        margin-top: 4px
+        +caption-2
+        color: $neutrals4
+    &__file
+        position: relative
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        height: 182px
+        margin-top: 16px
+        border-radius: 16px
+        overflow: hidden
+        background: $neutrals7
+        +dark
+            background: $neutrals2
+    &__input
+        position: absolute
+        top: 0
+        left: 0
+        font-size: 400px
+        opacity: 0
+    &__icon
+        margin-bottom: 10px
+        .icon
+            width: 24px
+            height: 24px
+            fill: $neutrals4
+    &__format
+        +caption-2
+        color: $neutrals4
+    &__category
+        +body-bold-2
+    &__fieldset
+        margin-top: 32px
+        .field
+            &:not(:last-child)
+                margin-bottom: 32px
+                +m
+                    margin-bottom: 20px
+    &__row
+        display: flex
+        margin: 0 -10px
+        +m
+            display: block
+            margin: 0
+    &__col
+        flex: 0 0 calc(33.333% - 20px)
+        width: calc(33.333% - 20px)
+        margin: 0 10px
+        +m
+            width: 100%
+            margin: 0
+            &:not(:last-child)
+                margin-bottom: 20px
+    &__options
+        margin-bottom: 40px
+        +m
+            margin-bottom: 32px
+    &__option
+        display: flex
+        align-items: flex-start
+        &:not(:last-child)
+            margin-bottom: 32px
+    &__box
+        flex-grow: 1
+    .switch
+        flex-shrink: 0
+        margin-left: 24px
+    &__text
+        margin-top: 4px
+        +caption-2
+        color: $neutrals4
+    &__cards
+        display: flex
+        margin: 24px -4px 0
+        overflow-x: auto 
+        -ms-overflow-style: none
+        scrollbar-width: none
+        -webkit-overflow-scrolling: touch
+        +m
+            margin: 24px -32px 0
+        &::-webkit-scrollbar
+            display: none 
+        +m
+            &:before,
+            &:after
+                content: ""
+                flex-shrink: 0
+                width: 32px
+                height: 1px
+    &__card
+        flex-shrink: 0
+        width: 160px
+        margin: 0 4px
+        padding: 24px
+        border-radius: 16px
+        background: $neutrals7
+        +button-2
+        cursor: pointer
+        +m
+            margin: 0
+            &:not(:last-child)
+                margin-right: 8px
+        +dark
+            background: $neutrals2
+        &:hover
+            .upload__plus
+                .icon
+                    opacity: 1
+    &__plus
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 32px
+        height: 32px
+        border-radius: 50%
+        margin-bottom: 12px
+        .icon
+            width: 24px
+            height: 24px
+            fill: $neutrals8
+            opacity: 0
+            transition: opacity .2s
+    &__foot
+        display: flex
+        align-items: center
+        +m
+            display: block
+            text-align: center
+        .upload__button
+            .icon
+                width: 10px
+                height: 10px
+            +m
+                width: 100%
+            &:not(:last-child)
+                margin-right: 24px
+                +m
+                    margin: 0 0 12px
+    &__saving
+        display: inline-flex
+        align-items: center
+        margin-left: auto
+        +button-1
+    .loader
+        margin-left: 24px
+      

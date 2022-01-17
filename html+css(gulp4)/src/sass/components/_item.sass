@@ -1,0 +1,214 @@
+.item
+    padding: 96px 0
+    +x
+        padding: 80px 0
+    +m
+        padding: 64px 0
+    &__center
+        display: flex
+        // align-items: flex-start
+        +t
+            display: block
+    &__bg
+        position: relative
+        flex-grow: 1
+        align-self: flex-start
+        margin-right: 96px
+        +x
+            margin-right: 64px
+        +d
+            margin-right: 32px
+        +t
+            margin: 0 0 32px
+    &__details
+        display: flex
+        flex-direction: column
+        flex-shrink: 0
+        width: 384px
+        +d
+            width: 336px
+        +t
+            width: 100%
+    &__preview
+        position: relative
+        img
+            width: 100%
+            border-radius: 16px
+    &__categories
+        position: absolute
+        top: 24px
+        left: 24px
+        display: flex
+        flex-wrap: wrap
+        margin: -8px 0 0 -8px
+    &__category
+        margin: 8px 0 0 8px
+    .options
+        position: absolute
+        top: auto
+        left: 50%
+        bottom: 24px
+        transform: translateX(-50%)
+    &__title
+        margin-bottom: 8px
+    &__cost
+        display: flex
+        align-items: center
+        margin-bottom: 40px
+    &__cost &__price
+        +dm-sans
+        font-size: 16px
+        line-height: 30px
+        &:not(:last-child)
+            margin-right: 8px
+    &__counter
+        +button-1
+        color: $neutrals4
+    &__text
+        margin-bottom: 40px
+        +body-2
+        color: $neutrals4
+        a
+            text-decoration: underline
+            font-weight: 500
+            color: $neutrals2
+            +dark
+                color: $neutrals8
+            &:hover
+                text-decoration: none
+    &__tabs
+        margin-bottom: auto
+    &__nav
+        display: flex
+        margin-bottom: 32px
+        padding: 6px
+        border-radius: 20px
+        box-shadow: inset 0 0 0 2px $neutrals6
+        +dark
+            box-shadow: inset 0 0 0 2px $neutrals3
+    &__link
+        padding: 6px 12px
+        border-radius: 14px
+        background: none
+        +button-2
+        color: $neutrals4
+        transition: all .2s
+        &:hover
+            color: $neutrals3
+            +dark
+                color: $neutrals6
+        &.active
+            background: $neutrals3
+            color: $neutrals8
+            +dark
+                background: $neutrals8
+                color: $neutrals2
+        &:not(:last-child)
+            margin-right: 8px
+    &__user
+        display: flex
+        align-items: center
+        padding-bottom: 16px
+        border-bottom: 1px solid $neutrals6
+        +dark
+            border-color: $neutrals3
+        &:not(:last-child)
+            margin-bottom: 16px
+    &__avatar
+        position: relative
+        flex-shrink: 0
+        width: 48px
+        height: 48px
+        margin-right: 16px
+        & > img
+            width: 100%
+            height: 100%
+            border-radius: 50%
+            object-fit: cover
+    &__reward
+        position: absolute
+        right: -5px
+        bottom: -5px
+        img
+            max-width: 25px
+    &__description
+        flex-grow: 1
+    &__time
+        flex-shrink: 0
+        align-self: flex-start
+        margin-left: 12px
+        +caption-2
+        color: $neutrals4
+    &__action
+        color: $neutrals4
+        span
+            font-weight: 500
+            color: $neutrals2
+            +dark
+                color: $neutrals8
+            &.item__money
+                color: $green 
+    &__position
+        color: $neutrals4
+    &__name
+        font-weight: 500
+    &__box
+        display: none
+    &__control
+        margin-top: 32px
+        padding: 24px
+        border-radius: 16px
+        box-shadow: 0px 64px 64px -24px rgba(31, 47, 70, 0.12)
+        border: 1px solid $neutrals6
+        +m
+            margin-left: -16px
+            margin-right: -16px
+            padding: 16px
+        +dark
+            background: $neutrals2
+            border-color: $neutrals3
+    &__head
+        display: flex
+        align-items: center
+    &__info
+        +body-bold-2
+        color: $neutrals4
+        span
+            color: $neutrals2
+            +dark
+                color: $neutrals8
+    &__currency
+        display: flex
+    &__price
+        +body-bold-1
+        &:nth-child(2)
+            color: $neutrals4
+        &:not(:last-child)
+            margin-right: 12px
+    &__btns
+        display: flex
+        margin: 32px -4px 0
+    &__btns &__button
+        flex: 0 0 calc(50% - 8px)
+        width: calc(50% - 8px)
+        margin: 0 4px
+        padding: 0 8px
+    &__variants
+        margin-top: 32px
+        font-weight: 500
+        color: $neutrals4
+        span
+            margin-left: 12px
+            font-weight: 400
+    &__percent
+        font-weight: 500
+        color: $neutrals2
+        +dark
+            color: $neutrals8
+    &__foot
+        margin-top: 32px
+    &__foot &__button
+        width: 100%
+    &__note
+        margin-top: 32px
+        color: $neutrals4

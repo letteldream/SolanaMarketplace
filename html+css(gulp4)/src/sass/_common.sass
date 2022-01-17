@@ -1,0 +1,208 @@
+// common styles
+body
+    min-width: 375px
+    background: $neutrals8
+    +poppins
+    font-size: 14px
+    line-height: (24/14)
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    color: $neutrals2
+    &.dark
+        background: $neutrals1
+        color: $neutrals8
+
+a
+    text-decoration: none
+
+svg,
+img
+    vertical-align: middle
+
+.outer
+    overflow: hidden
+
+.center
+    width: 100%
+    max-width: 1280px
+    margin: 0 auto
+    padding: 0 80px
+    +t
+        padding: 0 40px
+    +m
+        padding: 0 32px
+    
+.some-icon
+    +dark
+        display: none
+
+.some-icon-dark
+    display: none
+    +dark
+        display: inline-block
+
+.slick-arrow
+    position: absolute
+    z-index: 2
+    width: 40px
+    height: 40px
+    border-radius: 50%
+    font-size: 0
+    transition: all .2s
+    path
+        position: relative
+        z-index: 2
+        fill: $neutrals4
+        transition: fill .2s
+    &:hover
+        box-shadow: inset 0 0 0 2px $neutrals6
+    +dark
+        &:hover
+            box-shadow: inset 0 0 0 2px $neutrals3
+            path
+                fill: $neutrals6
+
+.select
+    float: none
+    width: 100% 
+    height: 48px
+    padding: 0 48px 0 16px
+    box-shadow: inset 0 0 0 2px $neutrals6
+    background: $neutrals8
+    border-radius: 12px 
+    border: none
+    opacity: 1
+    font-size: 14px
+    font-weight: 500
+    line-height: 48px 
+    &:after
+        display: none 
+    &:before
+        content: ""
+        position: absolute
+        top: 50%
+        right: 8px
+        width: 32px
+        height: 32px
+        transform: translateY(-50%) 
+        border-radius: 50%
+        box-shadow: inset 0 0 0 2px $neutrals6
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none' viewBox='0 0 10 6'%3E%3Cpath fill-rule='evenodd' d='M9.207.793a1 1 0 0 0-1.414 0L5 3.586 2.207.793A1 1 0 1 0 .793 2.207l3.5 3.5a1 1 0 0 0 1.414 0l3.5-3.5a1 1 0 0 0 0-1.414z' fill='%23777e91'/%3E%3C/svg%3E") no-repeat 50% 50% / 10px auto
+        transition: transform .2s
+    +dark
+        background: $neutrals1
+        box-shadow: inset 0 0 0 2px $neutrals3
+        -webkit-appearance: none
+        &:before
+            box-shadow: inset 0 0 0 2px $neutrals3
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none' viewBox='0 0 10 6'%3E%3Cpath fill-rule='evenodd' d='M9.207.793a1 1 0 0 0-1.414 0L5 3.586 2.207.793A1 1 0 1 0 .793 2.207l3.5 3.5a1 1 0 0 0 1.414 0l3.5-3.5a1 1 0 0 0 0-1.414z' fill='%23FCFCFD'/%3E%3C/svg%3E") 
+    &.open
+        box-shadow: inset 0 0 0 2px $neutrals4
+        +dark
+            box-shadow: inset 0 0 0 2px $neutrals4
+        &:before
+            transform: translateY(-50%) rotate(180deg)
+    .current
+        display: block
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+    .list
+        right: 0
+        margin-top: 2px 
+        border-radius: 12px
+        background: $neutrals8
+        border: 2px solid $neutrals6
+        box-shadow: 0 4px 12px rgba($neutrals2, .1) 
+        +dark
+            background: $neutrals1
+            border-color: $neutrals3 
+            box-shadow: 0 4px 12px rgba($neutrals1, .1)
+    .option
+        min-height: auto
+        padding: 10px 14px 
+        font-weight: 500 
+        line-height: 1.4
+        &:hover,
+        &.focus,
+        &.selected.focus
+            background: $neutrals7
+            +dark
+                background: $neutrals2 
+        &.selected
+            font-weight: 500
+            color: $blue
+
+.select-empty
+    float: none
+    width: 100% 
+    height: 64px
+    padding: 0 64px 0 24px
+    box-shadow: none
+    background: transparent
+    border-radius: 32px 
+    border: none
+    opacity: 1
+    +dm-sans
+    font-size: 40px
+    font-weight: 700
+    line-height: 64px 
+    &:after
+        display: none 
+    &:before
+        content: ""
+        position: absolute
+        top: 50%
+        right: 27px
+        width: 15px
+        height: 15px
+        transform: translateY(-50%)
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none' viewBox='0 0 10 6'%3E%3Cpath fill-rule='evenodd' d='M9.207.793a1 1 0 0 0-1.414 0L5 3.586 2.207.793A1 1 0 1 0 .793 2.207l3.5 3.5a1 1 0 0 0 1.414 0l3.5-3.5a1 1 0 0 0 0-1.414z' fill='%2323262F'/%3E%3C/svg%3E") no-repeat 50% 50% / 100% auto
+        transition: transform .2s
+    +dark
+        &:before
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none' viewBox='0 0 10 6'%3E%3Cpath fill-rule='evenodd' d='M9.207.793a1 1 0 0 0-1.414 0L5 3.586 2.207.793A1 1 0 1 0 .793 2.207l3.5 3.5a1 1 0 0 0 1.414 0l3.5-3.5a1 1 0 0 0 0-1.414z' fill='%23FCFCFD'/%3E%3C/svg%3E") 
+    &.open
+        background: $neutrals8
+        +dark
+            background: $neutrals1
+        &:before
+            transform: translateY(-50%) rotate(180deg)
+    .current
+        display: block
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+    .list
+        right: 0
+        margin-top: 4px 
+        border: none 
+        border-radius: 24px
+        background: $neutrals8
+        box-shadow: 0px 24px 32px 0 rgba(15, 15, 15, 0.15)
+        +dark
+            border: 2px solid $neutrals1 
+            background: $neutrals1
+            box-shadow: 0 4px 12px rgba($neutrals1, .1)
+    .option
+        min-height: auto
+        padding: 10px 24px
+        border: none  
+        +dm-sans
+        font-size: 40px
+        font-weight: 700
+        line-height: 1.2
+        color: $neutrals4
+        +dark
+            padding: 10px 22px 
+            color: $neutrals8
+        &:hover,
+        &.focus,
+        &.selected.focus
+            background: $neutrals7
+            +dark
+                background: lighten($neutrals1, 2)
+        &.selected
+            color: $blue
+            +dark
+                color: $blue   

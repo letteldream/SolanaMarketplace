@@ -1,0 +1,57 @@
+.player
+    position: relative
+    img
+        width: 100%
+        border-radius: 16px
+    &__control
+        position: absolute
+        left: 8px
+        right: 8px
+        bottom: 8px
+        z-index: 3
+        display: flex
+        align-items: center
+        height: 40px
+        padding: 0 20px
+        border-radius: 20px
+        background: $neutrals8
+        +dark
+            background: $neutrals1
+    &__button
+        .icon
+            width: 24px
+            height: 24px
+            fill: $neutrals4
+            transition: fill .2s
+        &:hover
+            .icon
+                fill: $neutrals2
+                +dark
+                    fill: $neutrals8
+        &:not(:last-child)
+            margin-right: 24px
+            +m
+                margin-right: 16px
+    &__line
+        position: relative
+        flex-grow: 1
+        height: 8px
+        margin-right: 24px
+        background: $neutrals6
+        border-radius: 4px
+        +m
+            margin-right: 16px
+        +dark
+            background: $neutrals3
+    &__progress
+        position: absolute
+        top: 0
+        left: 0
+        bottom: 0
+        border-radius: 4px
+        background: $blue
+    &__time
+        margin-right: 24px
+        +body-bold-2
+        +m
+            margin-right: 16px

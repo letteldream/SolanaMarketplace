@@ -1,0 +1,32 @@
+---
+title: Crypter-NFT
+---
+extends layouts/layout
+block content
+	.control
+		.control__center.center
+			a.button-stroke.button-small.control__button(href="index.html")
+				+i('arrow-prev')
+				span Back to home
+			.breadcrumbs
+				ul.breadcrumbs
+					li.breadcrumbs__item
+						a.breadcrumbs__link(href="index.html") Home
+					li.breadcrumbs__item Upload Item
+	.section-pt80.variants
+		.variants__center.center
+			.variants__top
+				h1.variants__title.h2 Upload item
+				.variants__info Choose <span>“Single”</span> if you want your collectible to be one of a kind or <span>“Multiple”</span> if you want to sell one collectible multiple times
+			.variants__list
+				.variants__item
+					.variants__preview
+						img(srcSet="img/content/upload-pic-1@2x.jpg 2x" src="img/content/upload-pic-1.jpg" alt="Upload")
+					a.button-stroke.variants__button(href="upload-details.html") Create Single
+				.variants__item
+					.variants__preview
+						img(srcSet="img/content/upload-pic-2@2x.jpg 2x" src="img/content/upload-pic-2.jpg" alt="Upload")
+					a.button-stroke.variants__button(href="upload-details-multiple.html") Create Multiple
+			.variants__note We do not own your private keys and cannot access your funds without your confirmation.
+
+

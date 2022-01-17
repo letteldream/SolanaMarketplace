@@ -1,0 +1,298 @@
+---
+title: Crypter-NFT
+---
+extends layouts/layout
+block content
+	.profile
+		.profile__head.js-profile-head(style="background-image: url('img/content/bg-profile.jpg');")
+			.profile__center.center
+				.profile__file
+					input(type="file")
+					.profile__wrap
+						+i('upload-file')
+						.profile__info Drag and drop your photo here
+						.profile__text or click to browse
+					button.button-small.profile__button.js-profile-save Save photo
+				.profile__btns
+					button.button-stroke.button-small.profile__button.js-profile-load
+						span Edit cover photo
+						+i('edit')
+					a.button-stroke.button-small.profile__button(href="profile-edit.html") 
+						span Edit profile
+						+i('image')
+		.profile__body
+			.profile__center.center
+				.user
+					.user__avatar
+						img(src="img/content/avatar-big.jpg" alt="Avatar")
+					.user__name Enrico Cole
+					.user__code
+						.user__number 0xc4c16a645...b21a
+						button.user__copy
+							+i('copy')
+					.user__info A wholesome farm owner in Montana. Upcoming gallery solo show in Germany
+					a.user__site(href="https://ui8.net" target="_blank")
+						+i('globe')
+						| https://ui8.net
+					.user__control
+						.user__btns
+							button.button-stroke.button-small.user__button.js-user-follow.active
+								span Unfollow
+								span Follow
+							button.button-circle-stroke.button-small.user__button.js-user-share
+								+i('share')
+							a.button-circle-stroke.button-small.user__button.js-popup-open(href="#popup-report" data-effect="mfp-zoom-in") 
+								+i('report')
+						.user__box.js-user-box
+							.user__stage Share link to this page
+							.user__share.share-btn(data-url="https://ui8.net")
+								a.user__direction.btn-twitter(data-id="tw")
+									span
+										+i('twitter')
+								a.user__direction.btn-facebook(data-id="fb")
+									span
+										+i('facebook')
+					.user__socials
+						a.user__social(href="https://twitter.com/ui8" target="_blank")
+							+i('twitter')
+						a.user__social(href="https://www.instagram.com/ui8net/" target="_blank")
+							+i('instagram')
+						a.user__social(href="https://www.facebook.com/ui8.net/" target="_blank")
+							+i('facebook')
+					.user__note Member since Mar 15, 2021
+				.profile__wrapper.js-tabs
+					.profile__nav
+						a.profile__link.js-tabs-link.active(href="#") On Sale
+						a.profile__link.js-tabs-link(href="#") Collectibles
+						a.profile__link.js-tabs-link(href="#") Created
+						a.profile__link.js-tabs-link(href="#") Likes
+						a.profile__link.js-tabs-link(href="#") Following
+						a.profile__link.js-tabs-link(href="#") Followers
+					.profile__container
+						.profile__item.js-tabs-item(style="display: block;")
+							.profile__list
+								+card("img/content/card-pic-1@2x.jpg", "img/content/card-pic-1.jpg", "Amazing digital art")
+								+card("img/content/card-pic-2@2x.jpg", "img/content/card-pic-2.jpg", "Ribbon Hunter")
+								+card("img/content/card-pic-3@2x.jpg", "img/content/card-pic-3.jpg", "Amazing digital art")
+							+loader
+						.profile__item.js-tabs-item
+							.profile__list
+								+card("img/content/card-pic-1@2x.jpg", "img/content/card-pic-1.jpg", "Amazing digital art")
+								+card("img/content/card-pic-2@2x.jpg", "img/content/card-pic-2.jpg", "Ribbon Hunter")
+							+loader
+						.profile__item.js-tabs-item
+							.profile__list
+								+card("img/content/card-pic-1@2x.jpg", "img/content/card-pic-1.jpg", "Amazing digital art")
+								+card("img/content/card-pic-2@2x.jpg", "img/content/card-pic-2.jpg", "Ribbon Hunter")
+								+card("img/content/card-pic-3@2x.jpg", "img/content/card-pic-3.jpg", "Amazing digital art")
+								+card("img/content/card-pic-4@2x.jpg", "img/content/card-pic-4.jpg", "Ribbon Hunter")
+							+loader
+						.profile__item.js-tabs-item
+							.profile__list
+								+card("img/content/card-pic-1@2x.jpg", "img/content/card-pic-1.jpg", "Amazing digital art")
+								+card("img/content/card-pic-2@2x.jpg", "img/content/card-pic-2.jpg", "Ribbon Hunter")
+								+card("img/content/card-pic-3@2x.jpg", "img/content/card-pic-3.jpg", "Amazing digital art")
+								+card("img/content/card-pic-4@2x.jpg", "img/content/card-pic-4.jpg", "Ribbon Hunter")
+								+card("img/content/card-pic-5@2x.jpg", "img/content/card-pic-5.jpg", "Amazing digital art")
+							+loader
+						.profile__item.js-tabs-item
+							.followers
+								.followers__list
+									.followers__item
+										.followers__user
+											.followers__avatar
+												img(src="img/content/avatar-5.jpg" alt="Avatar")
+											.followers__details
+												.followers__name Sally Fadel
+												.followers__counter 161 followers
+												button.button-stroke.button-small.followers__button Unfollow
+										.followers__wrap
+											.followers__gallery
+												.followers__preview
+													img(src="img/content/follower-pic-1.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-2.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-3.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-4.jpg" alt="Follower")
+									.followers__item
+										.followers__user
+											.followers__avatar
+												img(src="img/content/avatar-5.jpg" alt="Avatar")
+											.followers__details
+												.followers__name Aniya Harber
+												.followers__counter 161 followers
+												button.button-stroke.button-small.followers__button Unfollow
+										.followers__wrap
+											.followers__gallery
+												.followers__preview
+													img(src="img/content/follower-pic-5.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-6.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-1.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-3.jpg" alt="Follower")
+									.followers__item
+										.followers__user
+											.followers__avatar
+												img(src="img/content/avatar-7.jpg" alt="Avatar")
+											.followers__details
+												.followers__name Edwardo Bea
+												.followers__counter 161 followers
+												button.button-stroke.button-small.followers__button Unfollow
+										.followers__wrap
+											.followers__gallery
+												.followers__preview
+													img(src="img/content/follower-pic-4.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-1.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-3.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-6.jpg" alt="Follower")
+									.followers__item
+										.followers__user
+											.followers__avatar
+												img(src="img/content/avatar-8.jpg" alt="Avatar")
+											.followers__details
+												.followers__name Reymundo
+												.followers__counter 161 followers
+												button.button-stroke.button-small.followers__button Unfollow
+										.followers__wrap
+											.followers__gallery
+												.followers__preview
+													img(src="img/content/follower-pic-5.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-2.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-6.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-1.jpg" alt="Follower")
+									.followers__item
+										.followers__user
+											.followers__avatar
+												img(src="img/content/avatar-9.jpg" alt="Avatar")
+											.followers__details
+												.followers__name Jeanette
+												.followers__counter 161 followers
+												button.button-stroke.button-small.followers__button Unfollow
+										.followers__wrap
+											.followers__gallery
+												.followers__preview
+													img(src="img/content/follower-pic-1.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-3.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-5.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-4.jpg" alt="Follower")
+								+loader
+						.profile__item.js-tabs-item
+							.followers
+								.followers__list
+									.followers__item
+										.followers__user
+											.followers__avatar
+												img(src="img/content/avatar-5.jpg" alt="Avatar")
+											.followers__details
+												.followers__name Sally Fadel
+												.followers__counter 161 followers
+												button.button-small.followers__button Follow
+										.followers__wrap
+											.followers__gallery
+												.followers__preview
+													img(src="img/content/follower-pic-1.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-2.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-3.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-4.jpg" alt="Follower")
+									.followers__item
+										.followers__user
+											.followers__avatar
+												img(src="img/content/avatar-5.jpg" alt="Avatar")
+											.followers__details
+												.followers__name Aniya Harber
+												.followers__counter 161 followers
+												button.button-small.followers__button Follow
+										.followers__wrap
+											.followers__gallery
+												.followers__preview
+													img(src="img/content/follower-pic-5.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-6.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-1.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-3.jpg" alt="Follower")
+									.followers__item
+										.followers__user
+											.followers__avatar
+												img(src="img/content/avatar-7.jpg" alt="Avatar")
+											.followers__details
+												.followers__name Edwardo Bea
+												.followers__counter 161 followers
+												button.button-small.followers__button Follow
+										.followers__wrap
+											.followers__gallery
+												.followers__preview
+													img(src="img/content/follower-pic-4.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-1.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-3.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-6.jpg" alt="Follower")
+									.followers__item
+										.followers__user
+											.followers__avatar
+												img(src="img/content/avatar-8.jpg" alt="Avatar")
+											.followers__details
+												.followers__name Reymundo
+												.followers__counter 161 followers
+												button.button-small.followers__button Follow
+										.followers__wrap
+											.followers__gallery
+												.followers__preview
+													img(src="img/content/follower-pic-5.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-2.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-6.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-1.jpg" alt="Follower")
+									.followers__item
+										.followers__user
+											.followers__avatar
+												img(src="img/content/avatar-9.jpg" alt="Avatar")
+											.followers__details
+												.followers__name Jeanette
+												.followers__counter 161 followers
+												button.button-small.followers__button Follow
+										.followers__wrap
+											.followers__gallery
+												.followers__preview
+													img(src="img/content/follower-pic-1.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-3.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-5.jpg" alt="Follower")
+												.followers__preview
+													img(src="img/content/follower-pic-4.jpg" alt="Follower")
+								+loader
+	.popup.popup_report.mfp-hide#popup-report
+		.popup__title.h4 Report
+		.popup__note Describe why you think this item should be removed from marketplace
+		.field
+			.field__label message
+			.field__wrap
+				textarea.field__textarea(name="message" placeholder="Tell us the details" required)
+		.popup__btns
+			button.button-purple.popup__button Send now
+			button.button-stroke.popup__button Cancel
+	+popupWallet
+	+popupBid
+
